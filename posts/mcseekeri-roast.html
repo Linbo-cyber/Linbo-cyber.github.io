@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MCSeekeri：NixOS 配置文件侠与 PE 圈造谣艺术家</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <article class="paper">
+      <h1>MCSeekeri：NixOS 配置文件侠与 PE 圈造谣艺术家</h1>
+      <div class="sub">——一个关闭 Issue 的人，打开了潘多拉的嘴</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <blockquote>"我的代码不接受批评。不是因为它完美，而是因为我把评论区关了。"<br/>—— MCSeekeri 的 GitHub 哲学</blockquote>
+
+      <h2>一、人物速写</h2>
+      <p>MCSeekeri，GitHub 用户，0 粉丝（是的，你没看错），个人简介写着"49% of my body is made of movies"——剩下 51% 大概是由 .nix 配置文件和造谣的勇气构成的。</p>
+      <p>此人最广为人知的两件事：</p>
+      <ol>
+        <li>做了一个叫 Naomi 的"自研系统"（剧透：不是系统）</li>
+        <li>造谣 CE-RAMOS 有病毒，直接导致项目作者被网暴、项目停服</li>
+      </ol>
+      <p>一个建设不行、破坏一流的典型。</p>
+
+      <h2>二、"自研系统" Naomi：史上最大胆的 README</h2>
+
+      <h3>它到底是什么</h3>
+      <p>Naomi 的全称是"NAOMI: Aggregate Online Modular Infrastructure"——光看名字你以为是什么分布式操作系统内核项目。</p>
+      <p>点进去一看：</p>
+      <ul>
+        <li>语言：Nix</li>
+        <li>Topics 标签：<code>dotfiles</code>, <code>nixos-configuration</code>, <code>home-manager</code></li>
+        <li>内容：一堆 .nix 配置文件</li>
+      </ul>
+      <p>翻译成人话：<strong>这是一套 NixOS 的 dotfiles。</strong></p>
+      <p>就像你把 .bashrc 和 .vimrc 传到 GitHub 上，然后宣布"我自研了一个操作系统"。</p>
+
+      <h3>README 的艺术</h3>
+      <p>最精彩的是 README 里的这句话：</p>
+      <blockquote>NAOMI: Aggregate Online Modular Infrastructure，简称 Naomi，是基于 NixOS 的"定制系统"。</blockquote>
+      <p>注意那个引号——"定制系统"。连作者自己都心虚到要加引号了。但到了 B 站宣传的时候，引号就神奇地消失了，变成了"自研系统"。</p>
+      <p>这就好比你在简历上写"曾在世界 500 强企业'工作'"，面试的时候说"我在世界 500 强工作过"——引号是你最后的良心，摘掉引号就是赤裸裸的欺骗。</p>
+
+      <h3>技术含量分析</h3>
+      <p>让我们看看这个"自研系统"的核心技术栈：</p>
+      <ul>
+        <li><code>flake.nix</code> —— NixOS 社区的标准模板</li>
+        <li><code>home-manager</code> —— 社区工具，不是他写的</li>
+        <li><code>disko</code> —— 社区工具，不是他写的</li>
+        <li><code>stylix</code> —— 社区工具，不是他写的</li>
+        <li><code>sops</code> —— 社区工具，不是他写的</li>
+      </ul>
+      <p>他做的事情是：把别人写的工具用 Nix 语言组装在一起，然后声称这是"自研系统"。</p>
+      <p>这就像你用 WordPress 搭了个博客，然后跟别人说"我自研了一个内容管理系统"。或者你用预制菜热了一桌子饭，然后发朋友圈说"今天亲手做了一桌大餐"。</p>
+      <p>严格来说，他"自研"的部分是：<strong>选择了哪些 .nix 文件放在哪个文件夹里。</strong>这确实是一种创造性劳动——就像整理书架也是一种劳动一样。但你不会因为整理了书架就说自己"写了一本书"。</p>
+
+      <h3>4 颗星的含金量</h3>
+      <p>Naomi 在 GitHub 上有 4 颗星。考虑到其中大概率包含他自己的星和几个朋友的同情星，这个项目的真实受众可能是……0。</p>
+      <p>但这不妨碍他在 B 站上大肆宣传"自研系统"。毕竟 B 站观众又不会真的去看你的 GitHub。</p>
+
+      <h2>三、关闭 Issue：我听不见我听不见</h2>
+      <p>MCSeekeri 在 GitHub 上有 20 个自有仓库。其中只有 5 个开启了 Issue 功能。也就是说，<strong>75% 的仓库直接关闭了社区反馈渠道。</strong></p>
+      <p>PR（Pull Request）就更别想了。</p>
+      <p>这是什么概念？这就像开了一家餐厅，然后：</p>
+      <ul>
+        <li>把意见箱焊死了</li>
+        <li>把大众点评的评论区关了</li>
+        <li>在门口贴了张告示："本店不接受任何形式的反馈，觉得不好吃请自行离开"</li>
+      </ul>
+      <p>开源社区的核心精神是什么？是协作、是反馈、是共同改进。关闭 Issue 和 PR 就是在说："我的代码是完美的，你们没有资格评价。"</p>
+      <p>但讽刺的是，他的代码真的完美吗？一个 4 星的 dotfiles 仓库，连接受建议的勇气都没有，完美在哪？</p>
+      <p>更讽刺的是，他自己 fork 了别人的项目（RSSHub、lobehub、nixpkgs 等），享受着开源社区的成果，却不允许别人对他的项目提出任何意见。</p>
+      <p><strong>只享受开源的权利，不承担开源的义务。</strong>这大概就是 MCSeekeri 版本的"开源精神"。</p>
+
+      <h2>四、CE-RAMOS 造谣事件：一篇文章毁掉一个项目</h2>
+      <p>这是 MCSeekeri 最"辉煌"的战绩。</p>
+
+      <h3>事件经过</h3>
+      <p>CE-RAMOS 是 PE 圈的一个项目，致力于提供"近乎 WTG 般的 PE 体验"。MCSeekeri 发布了一篇文章，声称 CE-RAMOS 携带恶意程序，列举了 Ventoy.exe、Everything.exe、cpuz.exe 等文件"带毒"。</p>
+      <p>文章的措辞极具煽动性：</p>
+      <blockquote>"如果是有意为之……那最好仔细检查你的设备是否安全。"</blockquote>
+      <p>这句话的潜台词是：CE-RAMOS 的开发者故意在系统里植入病毒。</p>
+
+      <h3>问题在哪</h3>
+      <p>PE 系统打包第三方工具时，由于重新封装和压缩，杀毒软件误报是极其常见的现象。任何做过 PE 的人都知道这一点。Ventoy 本身就经常被杀软误报，这在 Ventoy 的官方 FAQ 里都有说明。</p>
+      <p>但 MCSeekeri 的文章完全没有提到"误报"的可能性，而是直接定性为"恶意程序"，并暗示开发者"有意为之"。</p>
+      <p>这不是安全研究，这是造谣。</p>
+
+      <h3>后果</h3>
+      <p>文章发布后，CE-RAMOS 的作者遭到大规模网暴。最终，作者不堪压力，<strong>放弃了项目</strong>。</p>
+      <p>现在访问 <a href="https://ce-ramos.cn">ce-ramos.cn</a>，你只会看到六个字：</p>
+      <blockquote>该项目已停止服务</blockquote>
+      <p>一个人花了一年多时间打磨到 V2.3 PRO 版本的项目，就这样被一篇造谣文章毁了。</p>
+      <p>而 MCSeekeri 呢？他还在 GitHub 上安安静静地维护他的 .nix 配置文件，关着 Issue，关着 PR，仿佛什么都没发生过。</p>
+
+      <h3>最讽刺的对比</h3>
+      <p>让我们做一个简单的对比：</p>
+      <ul>
+        <li>CE-RAMOS：一个真正的 PE 系统，从零开始构建，迭代了一年多，有实际用户</li>
+        <li>Naomi：一堆 NixOS 配置文件，4 颗星，自称"自研系统"</li>
+      </ul>
+      <p>做了真东西的人被逼停服了，写配置文件的人还在吹"自研系统"。</p>
+      <p>这就是 PE 圈的现状：<strong>造谣者安然无恙，创造者被迫退场。</strong></p>
+
+      <h2>五、行为模式总结</h2>
+      <p>综合以上事迹，MCSeekeri 的行为模式可以概括为：</p>
+      <ol>
+        <li><strong>虚假宣传</strong>：把 dotfiles 包装成"自研系统"，在 B 站误导不明真相的观众</li>
+        <li><strong>拒绝反馈</strong>：75% 的仓库关闭 Issue，不接受任何社区意见</li>
+        <li><strong>造谣中伤</strong>：把杀软误报定性为"恶意程序"，暗示开发者故意植毒</li>
+        <li><strong>毫无担当</strong>：造谣导致他人项目停服后，没有任何道歉或澄清</li>
+      </ol>
+      <p>如果说 PE 圈需要一个"最佳反面教材"奖，MCSeekeri 绝对是有力竞争者。</p>
+
+      <h2>六、给 MCSeekeri 的建议</h2>
+      <ul>
+        <li>把 Naomi 的 README 从"自研系统"改成"我的 NixOS 配置文件"——诚实是美德</li>
+        <li>打开你的 Issue 和 PR——如果你的代码真的好，它经得起检验；如果经不起，那更需要反馈</li>
+        <li>给 CE-RAMOS 的作者道个歉——你的一篇文章毁了别人一年多的心血</li>
+        <li>下次发"安全分析"之前，先学学什么叫杀软误报</li>
+        <li>0 粉丝不丢人，造谣才丢人</li>
+      </ul>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基于公开信息整理。MCSeekeri 如果觉得被冤枉了，欢迎打开你的 Issue 来反驳——哦等等，你关了。</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;">免责声明：本文仅供娱乐与记录用途，不针对任何特定个人，文中所有内容均来源于公开可查的互联网信息。如有雷同，纯属巧合。本站不对读者基于本文内容所做的任何行为承担责任。</p>
+
+      <hr />
+      <h2 style="font-size:20px;margin:0 0 12px;">评论</h2>
+      <script>
+      (function() {
+        var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'github-dark' : 'github-light';
+        var s = document.createElement('script');
+        s.src = 'https://utteranc.es/client.js';
+        s.setAttribute('repo', 'Linbo-cyber/Linbo-cyber.github.io');
+        s.setAttribute('issue-term', 'pathname');
+        s.setAttribute('label', 'comment');
+        s.setAttribute('theme', theme);
+        s.setAttribute('crossorigin', 'anonymous');
+        s.async = true;
+        document.currentScript.parentNode.insertBefore(s, document.currentScript);
+      })();
+      </script>
+
+      <p style="margin-top:20px;"><a href="/">← 返回首页</a></p>
+    </article>
+  </main>
+</body>
+</html>
