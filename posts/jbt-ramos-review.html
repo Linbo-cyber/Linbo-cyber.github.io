@@ -58,13 +58,19 @@
 
       <hr />
       <h2 style="font-size:20px;margin:0 0 12px;">评论</h2>
-      <script src="https://utteranc.es/client.js"
-              repo="Linbo-cyber/Linbo-cyber.github.io"
-              issue-term="pathname"
-              label="comment"
-              theme="github-light"
-              crossorigin="anonymous"
-              async>
+      <script>
+      (function() {
+        var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'github-dark' : 'github-light';
+        var s = document.createElement('script');
+        s.src = 'https://utteranc.es/client.js';
+        s.setAttribute('repo', 'Linbo-cyber/Linbo-cyber.github.io');
+        s.setAttribute('issue-term', 'pathname');
+        s.setAttribute('label', 'comment');
+        s.setAttribute('theme', theme);
+        s.setAttribute('crossorigin', 'anonymous');
+        s.async = true;
+        document.currentScript.parentNode.insertBefore(s, document.currentScript);
+      })();
       </script>
 
       <p style="margin-top:20px;"><a href="/">← 返回首页</a></p>
