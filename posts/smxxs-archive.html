@@ -48,7 +48,7 @@
       <h2>此人何许人也</h2>
       <p>B站名称：<strong>爱数码的小学生</strong></p>
       <p>B站 UID：<strong>3546799518255482</strong></p>
-      <p>QQ 号：27335141 / 3653248805 / 1137743390（是的，一个人三个号，大概是因为被拉黑的速度太快，号不够用）</p>
+      <p>QQ 号：27335141 / 3653248805 / 1137743390（是的，一个人三个号——因为惹的人太多，被举报封号的速度比注册新号还快）</p>
       <p>这位仁兄在数码/PE 圈子里以一种独特的方式闻名——不是因为技术贡献，而是因为他对圈内其他人的持续性骚扰。JBT-RAMOS 的作者 JBT 专门给他做了一个<a href="https://jbt-ramos.github.io/sb/">纪念网页</a>，可见此人的"影响力"。</p>
 
       <h2>行为模式</h2>
@@ -89,6 +89,61 @@
         <li><a href="https://jbt-ramos.github.io/sb/">JBT 制作的"数码小学生"档案页</a>——包含聊天截图和行为记录</li>
         <li><a href="https://space.bilibili.com/3546799518255482">B站主页</a>——爱数码的小学生</li>
       </ul>
+
+      <!-- 电子墓碑 -->
+      <hr />
+      <div style="text-align:center;padding:40px 20px;margin:20px 0;">
+        <div style="display:inline-block;border:2px solid var(--line);border-radius:16px;padding:40px 50px;background:var(--paper);box-shadow:0 4px 20px var(--shadow);">
+          <p style="font-size:40px;margin:0 0 10px;">🪦</p>
+          <p style="font-size:22px;font-weight:600;margin:0 0 6px;">爱数码的小学生</p>
+          <p style="font-size:14px;color:var(--muted);margin:0 0 4px;">B站 UID: 3546799518255482</p>
+          <p style="font-size:14px;color:var(--muted);margin:0 0 20px;">QQ: 27335141 / 3653248805 / 1137743390</p>
+          <p style="font-size:13px;color:var(--muted);font-style:italic;margin:0 0 24px;">"他来过，他骚扰过，他被挂了。"</p>
+          <div style="border-top:1px solid var(--line);padding-top:20px;">
+            <button id="mourn-btn" style="background:none;border:1px solid var(--line);border-radius:10px;padding:10px 24px;cursor:pointer;color:var(--ink);font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:all .2s;" title="为此人哀悼">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 16"/></svg>
+              <span>为此人哀悼</span>
+            </button>
+            <p style="margin:12px 0 0;font-size:14px;color:var(--muted);">已有 <strong id="mourn-count">-</strong> 人前来哀悼</p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      (function(){
+        var API = 'https://api.counterapi.dev/v1/linbo-smxxs/mourn';
+        var countEl = document.getElementById('mourn-count');
+        var btn = document.getElementById('mourn-btn');
+        var mourned = localStorage.getItem('smxxs_mourned');
+
+        // 获取当前计数
+        fetch(API)
+          .then(function(r){ return r.json(); })
+          .then(function(d){ countEl.textContent = d.count || 0; })
+          .catch(function(){ countEl.textContent = '?'; });
+
+        if(mourned){
+          btn.querySelector('span').textContent = '已哀悼';
+          btn.style.opacity = '0.6';
+          btn.style.cursor = 'default';
+        }
+
+        btn.addEventListener('click', function(){
+          if(mourned) return;
+          fetch(API + '/up')
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+              countEl.textContent = d.count || (parseInt(countEl.textContent)||0)+1;
+              btn.querySelector('span').textContent = '已哀悼';
+              btn.style.opacity = '0.6';
+              btn.style.cursor = 'default';
+              localStorage.setItem('smxxs_mourned', '1');
+              mourned = '1';
+            })
+            .catch(function(){});
+        });
+      })();
+      </script>
 
       <hr />
       <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基于公开信息整理。如果"数码小学生"本人觉得被冤枉了，建议先停止骚扰别人，再来讨论公平问题。</p>
