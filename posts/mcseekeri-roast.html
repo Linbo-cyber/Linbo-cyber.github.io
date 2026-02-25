@@ -60,7 +60,41 @@
 
       <hr />
 
-      <h2>二、造谣 CE-RAMOS：一个人如何用一篇文章杀死一个项目</h2>
+      <h2>一点五、让我们来欣赏一下这些"自研代码"的质量</h2>
+
+      <p>有人可能会说："虽然不是自研系统，但人家的 .nix 配置文件写得好也算有价值吧？"</p>
+      <p>好问题。让我们来看看。</p>
+
+      <p>Naomi 的 <code>hosts/</code> 目录里有这些主机配置：costarica、cuba、cyprus、manhattan、seychelles——用国家和地名命名，很有格调。但打开一看：</p>
+
+      <blockquote><code>networking.hostName = "manhattan";</code><br/><code>hardware.cpu.type = "qemu";</code><br/><code>system.stateVersion = "24.11";</code></blockquote>
+
+      <p>这就是他的"自研系统核心代码"。设置了一个主机名，声明了 CPU 类型是 qemu 虚拟机，指定了一个版本号。<strong>三行配置，幼儿园水平。</strong></p>
+
+      <p>再看看他的"模块化架构"：</p>
+      <ul>
+        <li><code>boot.nix</code> —— 配置启动项，NixOS 官方文档的 Example 原样照抄</li>
+        <li><code>fonts.nix</code> —— 装了几个字体，任何人 <code>nixos-generate-config</code> 都能生成</li>
+        <li><code>i18n.nix</code> —— 设置了中文语言环境，一行 <code>i18n.defaultLocale</code> 的事</li>
+        <li><code>ssh.nix</code> —— 开了个 SSH，<code>services.openssh.enable = true;</code>，惊天大作</li>
+        <li><code>zram.nix</code> —— 开了 zram，又是一行配置</li>
+      </ul>
+
+      <p>把这些东西拆成单独的文件，然后声称自己做了"模块化架构"，就像你把一篇作文的每个自然段存成单独的 Word 文档，然后说自己发明了"分布式文档管理系统"。</p>
+
+      <p>更关键的是：<strong>这些配置完全是为他自己的机器写的。</strong>他的 manhattan 是一台 qemu 虚拟机，他的 seychelles 大概是另一台。这些配置对其他任何人都毫无用处——你不可能拿他的主机名、他的硬件配置、他的个人偏好来用在自己的机器上。</p>
+
+      <p>这就是为什么 GitHub 上有个分类叫 <code>dotfiles</code>——因为这类东西的本质就是<strong>个人配置备份</strong>，方便自己换机器的时候恢复环境。它的受众是且仅是作者本人。</p>
+
+      <p>所以让我们再理一遍：</p>
+      <ol>
+        <li>代码质量：照抄官方文档 + 一行配置拆一个文件</li>
+        <li>适用范围：仅限作者本人的几台机器</li>
+        <li>社区价值：零（4 颗星，其中大概率包含自己的同情星）</li>
+        <li>对外宣传：自研系统</li>
+      </ol>
+
+      <p>这不叫自研系统，这叫<strong>公开备份个人电脑设置然后吹牛逼</strong>。</p>
 
       <p>如果说 Naomi 只是自欺欺人的虚假宣传，那么 CE-RAMOS 事件就是实打实的恶意造谣。</p>
 
