@@ -129,16 +129,12 @@
 
       <!-- 弹幕脚本 -->
       <style>
-        @keyframes danmu-scroll {
-          from { transform: translateX(100%); }
-          to { transform: translateX(-100%); }
-        }
         .danmu-item {
           position: absolute;
           white-space: nowrap;
           font-weight: bold;
           text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-          animation: danmu-scroll linear infinite;
+          will-change: transform;
         }
         .danmu-fixed-item {
           position: absolute;
@@ -160,82 +156,104 @@
         var colors = ['#ff4444','#ff6b6b','#ffa500','#ffcc00','#ff69b4','#ff1493','#00ccff','#44ff44','#ffffff','#ff8c00'];
         var container = document.getElementById('danmu-container');
         var fixedContainer = document.getElementById('danmu-fixed');
+        var tombZone = document.getElementById('tomb-zone');
         var toggleBtn = document.getElementById('danmu-toggle');
         var labelEl = document.getElementById('danmu-label');
         var onIcon = document.getElementById('danmu-on-icon');
         var offIcon = document.getElementById('danmu-off-icon');
         var enabled = localStorage.getItem('smxxs_danmu') !== '0';
-        var timers = [];
+        var rafId = null;
+        var scrollItems = [];
+        var fixedTimers = [];
 
         function randInt(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
         function randItem(arr){ return arr[randInt(0,arr.length-1)]; }
 
-        // 滚动弹幕
-        function spawnScrolling(){
-          if(!enabled) return;
+        function createScrollItem(initialOffset){
           var el = document.createElement('div');
           el.className = 'danmu-item';
           el.textContent = randItem(danmuTexts);
           var big = Math.random() < 0.25;
-          el.style.fontSize = big ? randInt(28,38)+'px' : randInt(14,20)+'px';
+          var fontSize = big ? randInt(28,38) : randInt(14,20);
+          el.style.fontSize = fontSize + 'px';
           el.style.color = randItem(colors);
-          el.style.top = randInt(5,85)+'%';
-          el.style.animationDuration = randInt(6,14)+'s';
-          el.style.opacity = big ? '0.9' : String(0.5+Math.random()*0.4);
+          el.style.opacity = big ? '0.9' : String(0.5 + Math.random()*0.4);
+          var top = randInt(5,85);
+          el.style.top = top + '%';
           container.appendChild(el);
-          el.addEventListener('animationiteration', function(){
-            el.textContent = randItem(danmuTexts);
-            el.style.top = randInt(5,85)+'%';
-            el.style.color = randItem(colors);
-          });
+          var zoneW = tombZone.offsetWidth;
+          var speed = (0.5 + Math.random() * 1.5); // px per frame
+          var x = initialOffset !== undefined ? initialOffset : zoneW + randInt(0, 200);
+          el.style.left = x + 'px';
+          return { el: el, x: x, speed: speed, top: top };
         }
 
-        // 固定弹幕
-        function spawnFixed(){
+        function tick(){
           if(!enabled) return;
+          var zoneW = tombZone.offsetWidth;
+          for(var i = 0; i < scrollItems.length; i++){
+            var item = scrollItems[i];
+            item.x -= item.speed;
+            // 当弹幕完全滚出左边，重置到右边
+            if(item.x < -item.el.offsetWidth - 20){
+              item.x = zoneW + randInt(0, 300);
+              item.el.textContent = randItem(danmuTexts);
+              item.el.style.color = randItem(colors);
+              item.el.style.top = randInt(5,85) + '%';
+            }
+            item.el.style.transform = 'translateX(' + item.x + 'px)';
+          }
+          rafId = requestAnimationFrame(tick);
+        }
+
+        function spawnFixed(){
           var el = document.createElement('div');
           el.className = 'danmu-fixed-item';
           el.textContent = randItem(danmuTexts);
           var big = Math.random() < 0.3;
-          el.style.fontSize = big ? randInt(24,34)+'px' : randInt(13,18)+'px';
+          el.style.fontSize = (big ? randInt(24,34) : randInt(13,18)) + 'px';
           el.style.color = randItem(colors);
-          el.style.left = randInt(5,75)+'%';
-          el.style.top = randInt(5,85)+'%';
-          el.style.opacity = String(0.3+Math.random()*0.35);
+          el.style.left = randInt(5,75) + '%';
+          el.style.top = randInt(5,85) + '%';
+          el.style.opacity = String(0.3 + Math.random()*0.35);
           fixedContainer.appendChild(el);
-          // 固定弹幕每隔一段时间换内容和位置
-          var tid = setInterval(function(){
-            if(!enabled){ clearInterval(tid); return; }
-            el.textContent = randItem(danmuTexts);
-            el.style.left = randInt(5,75)+'%';
-            el.style.top = randInt(5,85)+'%';
-            el.style.color = randItem(colors);
-          }, randInt(4000,8000));
-          timers.push(tid);
+          return el;
         }
 
         function startDanmu(){
-          for(var i=0;i<15;i++) setTimeout(spawnScrolling, i*400);
-          for(var j=0;j<8;j++) spawnFixed();
+          // 滚动弹幕：错开初始位置
+          var zoneW = tombZone.offsetWidth || 800;
+          for(var i = 0; i < 15; i++){
+            scrollItems.push(createScrollItem(zoneW + i * randInt(80, 200)));
+          }
+          rafId = requestAnimationFrame(tick);
+          // 固定弹幕
+          for(var j = 0; j < 8; j++){
+            var fel = spawnFixed();
+            (function(el){
+              var tid = setInterval(function(){
+                el.textContent = randItem(danmuTexts);
+                el.style.color = randItem(colors);
+              }, randInt(3000, 6000));
+              fixedTimers.push(tid);
+            })(fel);
+          }
         }
 
         function stopDanmu(){
+          if(rafId) cancelAnimationFrame(rafId);
+          rafId = null;
+          scrollItems = [];
           container.innerHTML = '';
           fixedContainer.innerHTML = '';
-          timers.forEach(function(t){ clearInterval(t); });
-          timers = [];
+          fixedTimers.forEach(function(t){ clearInterval(t); });
+          fixedTimers = [];
         }
 
         function updateUI(){
-          if(enabled){
-            labelEl.textContent = '弹幕 ON';
-            onIcon.style.display = '';
-            offIcon.style.display = 'none';
-          } else {
-            labelEl.textContent = '弹幕 OFF';
-            onIcon.style.display = 'none';
-            offIcon.style.display = '';
-          }
+          labelEl.textContent = enabled ? '弹幕 ON' : '弹幕 OFF';
+          onIcon.style.display = enabled ? '' : 'none';
+          offIcon.style.display = enabled ? 'none' : '';
         }
 
         toggleBtn.addEventListener('click', function(){
