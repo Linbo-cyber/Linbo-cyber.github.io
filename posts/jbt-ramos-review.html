@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JBT-RAMOS：PE 圈里最有野心的项目</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <article class="paper">
+      <h1>JBT-RAMOS：PE 圈里最有野心的项目</h1>
+      <div class="sub">——当别人还在做维护工具的时候，他已经在做操作系统了</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <p>如果你在 PE 圈混过一段时间，你大概见过各种各样的 WinPE 作品：微PE、优启通、FirPE……它们的共同点是：能用，够用，但本质上还是一个"维护工具箱"。</p>
+      <p>然后你遇到了 JBT-RAMOS，你会发现这东西的野心完全不在一个量级上。</p>
+
+      <h2>什么是 JBT-RAMOS</h2>
+      <p>JBT-RAMOS 是由开发者 JBT 打造的一个基于 Windows 的 PE/RAMOS 项目。RAMOS 的意思是 RAM OS——整个系统跑在内存里，开机即用，重启即还原。</p>
+      <p>但它不只是"跑在内存里的 PE"这么简单。它真正做到的事情是：<strong>在 PE 环境下还原大部分正常系统的功能</strong>。</p>
+
+      <h2>技术上到底牛在哪</h2>
+
+      <h3>原生 UWP 支持</h3>
+      <p>这是最炸裂的一点。传统 PE 基本只能跑 Win32 应用，UWP 想都别想。但 JBT-RAMOS 做到了在 PE 环境下原生运行 UWP 应用。这意味着你可以在一个"维护系统"里跑微软商店应用、现代 UI 程序，甚至 Windows Media Player。</p>
+      <p>做过 PE 开发的人都知道这有多难——UWP 依赖一整套运行时环境和系统服务，在精简到极致的 PE 里把这些东西拉起来，需要对 Windows 内核和组件依赖关系有极深的理解。</p>
+
+      <h3>全内存运行，秒级启动</h3>
+      <p>整个系统加载到内存后，所有操作都是内存级速度。没有磁盘 IO 瓶颈，应用启动快得离谱。而且因为跑在内存里，重启后一切还原，天然免疫病毒和恶意软件。</p>
+
+      <h3>开机内存占用控制</h3>
+      <p>Lite 版本开机内存占用仅 1.6GB。在塞进了这么多功能的前提下把内存压到这个水平，说明作者在系统裁剪和优化上下了真功夫，不是简单的"把 Windows 塞进内存"。</p>
+
+      <h2>为什么说它有野心</h2>
+      <p>大部分 PE 作者的目标是：做一个好用的维护工具。装系统、修引导、备份还原，搞定收工。</p>
+      <p>JBT 的目标显然不止于此。从 UWP 支持到界面调整，从 JBTSET 工具到持续的版本迭代（目前已经到 v2.3.1），他在做的事情更像是：<strong>在 PE 的框架下，尽可能逼近一个完整的操作系统体验</strong>。</p>
+      <p>这个方向在 PE 圈里几乎没有人走。不是因为没人想，而是因为太难了。JBT 不仅走了，而且走出了成果。</p>
+
+      <h2>社区运营</h2>
+      <p>JBT-RAMOS 活跃在多个平台：</p>
+      <ul>
+        <li>无忧启动论坛（wuyou.net）—— PE 圈的根据地，持续更新发布帖</li>
+        <li>B 站 —— 有完整的演示视频，播放量不错</li>
+        <li>GitHub —— 有项目主页和宣传站</li>
+        <li>自建官网 jbt-ramos.top —— 独立门面</li>
+      </ul>
+      <p>一个人能同时维护项目开发和多平台运营，这本身就说明了投入程度。很多优秀的 PE 作品死在了"作者不更新了"，而 JBT-RAMOS 从 2024 年到现在一直在迭代，这种持续性在 PE 圈里是稀缺的。</p>
+
+      <h2>写在最后</h2>
+      <p>PE 圈是一个小众但硬核的领域。在这个领域里，大部分人做的是"够用就好"的工具，而 JBT 做的是"我要把天花板往上推一推"的事情。</p>
+      <p>支持原生 UWP 的 PE、1.6GB 内存占用的全功能 RAMOS、持续迭代的版本更新——这些加在一起，让 JBT-RAMOS 成为我见过的最有技术含量和野心的 PE 项目之一。</p>
+      <p>如果你对 PE/RAMOS 感兴趣，强烈建议去试试。如果你只是路过，至少知道：在这个不起眼的小圈子里，有人在认真地做一件很酷的事。</p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">如果你也在做 PE 相关的项目，欢迎留言交流。</p>
+
+      <hr />
+      <h2 style="font-size:20px;margin:0 0 12px;">评论</h2>
+      <script src="https://utteranc.es/client.js"
+              repo="Linbo-cyber/Linbo-cyber.github.io"
+              issue-term="pathname"
+              label="comment"
+              theme="github-light"
+              crossorigin="anonymous"
+              async>
+      </script>
+
+      <p style="margin-top:20px;"><a href="/">← 返回首页</a></p>
+    </article>
+  </main>
+</body>
+</html>
