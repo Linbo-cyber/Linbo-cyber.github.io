@@ -3,129 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MCSeekeri：NixOS 配置文件侠与 PE 圈造谣艺术家</title>
+  <title>[安全警告] 立刻停止关注 MCSeekeri 并全脑杀毒</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <main class="wrap">
     <article class="paper">
-      <h1>MCSeekeri：NixOS 配置文件侠与 PE 圈造谣艺术家</h1>
-      <div class="sub">——一个关闭 Issue 的人，打开了潘多拉的嘴</div>
+      <h1>[安全警告] 立刻停止关注 MCSeekeri 并全脑杀毒</h1>
+      <div class="sub">——一个 NixOS 配置文件搬运工是如何把自己活成 PE 圈公害的</div>
       <div class="meta">2026-02-25</div>
       <hr />
 
-      <blockquote>"我的代码不接受批评。不是因为它完美，而是因为我把评论区关了。"<br/>—— MCSeekeri 的 GitHub 哲学</blockquote>
+      <blockquote>"如果是有意为之……那最好仔细检查你的设备是否安全。"<br/>—— MCSeekeri 造谣 CE-RAMOS 时的原话。现在我们把这句话还给他。</blockquote>
 
-      <h2>一、人物速写</h2>
-      <p>MCSeekeri，GitHub 用户，0 粉丝（是的，你没看错），个人简介写着"49% of my body is made of movies"——剩下 51% 大概是由 .nix 配置文件和造谣的勇气构成的。</p>
-      <p>此人最广为人知的两件事：</p>
-      <ol>
-        <li>做了一个叫 Naomi 的"自研系统"（剧透：不是系统）</li>
-        <li>造谣 CE-RAMOS 有病毒，直接导致项目作者被网暴、项目停服</li>
-      </ol>
-      <p>一个建设不行、破坏一流的典型。</p>
+      <hr />
 
-      <h2>二、"自研系统" Naomi：史上最大胆的 README</h2>
+      <h2>一、[安全警告] 立刻停止使用 Naomi 并全盘格式化你的智商</h2>
 
-      <h3>它到底是什么</h3>
-      <p>Naomi 的全称是"NAOMI: Aggregate Online Modular Infrastructure"——光看名字你以为是什么分布式操作系统内核项目。</p>
-      <p>点进去一看：</p>
+      <p><a href="https://github.com/MCSeekeri/Naomi">Naomi</a> 自称是"自研系统"，但仓库内却携带了多个<strong>智商侮辱性内容</strong>。</p>
+      <p>如果您相信过 Naomi 是"自研系统"，建议立刻清除所有相关记忆并进行全脑杀毒。</p>
+
+      <p>首先是仓库的 Topics 标签带毒：</p>
+      <blockquote>
+        <code>dotfiles</code>, <code>nixos-configuration</code>, <code>home-manager</code>, <code>nix-flake</code>
+      </blockquote>
+      <p>此为 MCSeekeri 自己给 Naomi 打的标签。此为正常人对"自研系统"的理解。<strong>两者没有任何交集。</strong></p>
+
+      <p>然后是仓库根目录的 <code>flake.nix</code>：</p>
+      <blockquote>
+        <code>inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";</code><br/>
+        <code>inputs.home-manager.url = "github:nix-community/home-manager/release-25.11";</code><br/>
+        <code>inputs.disko.url = "github:nix-community/disko";</code><br/>
+        <code>inputs.stylix.url = "github:danth/stylix";</code>
+      </blockquote>
+      <p>此为 Naomi 的"自研"核心代码。此为从 NixOS 社区直接引用的别人写的工具。<strong>两者完全一致。</strong></p>
+
+      <p>最后是 <code>modules/</code> 目录下的全部文件：</p>
+      <blockquote>
+        boot.nix, fonts.nix, i18n.nix, ssh.nix, users.nix, zram.nix, podman.nix, tailscale.nix...
+      </blockquote>
+      <p>此为 Naomi 的"自研系统模块"。此为任何一个 NixOS 用户都会写的基础配置文件。<strong>区别仅在于文件夹名字不同。</strong></p>
+
+      <p>因为时间原因，暂未对这些文件进行更细致的检查，但是可以确定 Naomi 的所有"自研"内容并不是原创。仅仅是核心配置中就引用了至少<strong>十几个</strong>社区项目，可想而知所谓的"自研"含量是什么情况。</p>
+
+      <p>值得注意的是，MCSeekeri 对大部分仓库<strong>关闭了 Issue 和 PR</strong>，这导致用户难以在使用前对代码质量进行反馈，项目是否靠谱完全依赖于作者的技术水平与自我认知。</p>
+
+      <p>20 个自有仓库，15 个关闭了 Issue。一般用户难以提出任何建议。</p>
+
+      <p>同时，MCSeekeri 大量 fork 了社区项目（RSSHub、lobehub、nixpkgs、waline 等），享受着开源社区的一切成果，却不允许任何人对他的项目提出意见。</p>
+
+      <p>如同"只下载，不上传"的迅雷一般，<strong>此人的开源精神值得怀疑。</strong></p>
+
+      <p>Naomi 已经在 GitHub 上存在了相当一段时间，作者却连最基本的<strong>诚实描述</strong>都做不好。如果是因为认知不足，那么显然没有理由继续相信这么一个不靠谱的人；如果是有意为之……</p>
+
+      <p><strong>……那最好仔细检查你的大脑是否安全。</strong></p>
+
+      <hr />
+
+      <h2>二、造谣 CE-RAMOS：一个人如何用一篇文章杀死一个项目</h2>
+
+      <p>如果说 Naomi 只是自欺欺人的虚假宣传，那么 CE-RAMOS 事件就是实打实的恶意造谣。</p>
+
+      <h3>他做了什么</h3>
+      <p>MCSeekeri 发布了一篇标题为<strong>"[安全警告] 立刻停止使用 CE-RAMOS 并全盘杀毒"</strong>的文章，声称 CE-RAMOS 系统内"携带了多个恶意程序"，包括 Ventoy.exe、Everything.exe、cpuz.exe。</p>
+
+      <p>文章的结尾是这样写的：</p>
+      <blockquote>"如果是因为能力不足，那么显然没有理由继续使用这么一个不成熟的系统，如果是有意为之……那最好仔细检查你的设备是否安全。"</blockquote>
+
+      <p>翻译成人话：<strong>CE-RAMOS 的开发者要么是废物，要么是故意给你种病毒的坏人。</strong></p>
+
+      <h3>真相是什么</h3>
+      <p>任何做过 PE 的人都知道：</p>
       <ul>
-        <li>语言：Nix</li>
-        <li>Topics 标签：<code>dotfiles</code>, <code>nixos-configuration</code>, <code>home-manager</code></li>
-        <li>内容：一堆 .nix 配置文件</li>
+        <li><strong>Ventoy</strong> 本身就是杀软误报重灾区，官方 FAQ 专门有一节解释这个问题</li>
+        <li><strong>Everything</strong> 和 <strong>CPU-Z</strong> 在 PE 环境中重新封装后，哈希值与官方原版不同是正常现象——因为 PE 需要对工具做适配修改</li>
+        <li>PE 系统打包第三方工具时，杀软误报率极高，这是<strong>行业常识</strong></li>
       </ul>
-      <p>翻译成人话：<strong>这是一套 NixOS 的 dotfiles。</strong></p>
-      <p>就像你把 .bashrc 和 .vimrc 传到 GitHub 上，然后宣布"我自研了一个操作系统"。</p>
+      <p>MCSeekeri 的文章里，"误报"这两个字<strong>一次都没出现</strong>。他直接跳过了最基本的排除步骤，把杀软的扫描结果当成了铁证，然后用"有意为之"四个字完成了从"技术分析"到"人身攻击"的华丽转身。</p>
 
-      <h3>README 的艺术</h3>
-      <p>最精彩的是 README 里的这句话：</p>
-      <blockquote>NAOMI: Aggregate Online Modular Infrastructure，简称 Naomi，是基于 NixOS 的"定制系统"。</blockquote>
-      <p>注意那个引号——"定制系统"。连作者自己都心虚到要加引号了。但到了 B 站宣传的时候，引号就神奇地消失了，变成了"自研系统"。</p>
-      <p>这就好比你在简历上写"曾在世界 500 强企业'工作'"，面试的时候说"我在世界 500 强工作过"——引号是你最后的良心，摘掉引号就是赤裸裸的欺骗。</p>
-
-      <h3>技术含量分析</h3>
-      <p>让我们看看这个"自研系统"的核心技术栈：</p>
-      <ul>
-        <li><code>flake.nix</code> —— NixOS 社区的标准模板</li>
-        <li><code>home-manager</code> —— 社区工具，不是他写的</li>
-        <li><code>disko</code> —— 社区工具，不是他写的</li>
-        <li><code>stylix</code> —— 社区工具，不是他写的</li>
-        <li><code>sops</code> —— 社区工具，不是他写的</li>
-      </ul>
-      <p>他做的事情是：把别人写的工具用 Nix 语言组装在一起，然后声称这是"自研系统"。</p>
-      <p>这就像你用 WordPress 搭了个博客，然后跟别人说"我自研了一个内容管理系统"。或者你用预制菜热了一桌子饭，然后发朋友圈说"今天亲手做了一桌大餐"。</p>
-      <p>严格来说，他"自研"的部分是：<strong>选择了哪些 .nix 文件放在哪个文件夹里。</strong>这确实是一种创造性劳动——就像整理书架也是一种劳动一样。但你不会因为整理了书架就说自己"写了一本书"。</p>
-
-      <h3>4 颗星的含金量</h3>
-      <p>Naomi 在 GitHub 上有 4 颗星。考虑到其中大概率包含他自己的星和几个朋友的同情星，这个项目的真实受众可能是……0。</p>
-      <p>但这不妨碍他在 B 站上大肆宣传"自研系统"。毕竟 B 站观众又不会真的去看你的 GitHub。</p>
-
-      <h2>三、关闭 Issue：我听不见我听不见</h2>
-      <p>MCSeekeri 在 GitHub 上有 20 个自有仓库。其中只有 5 个开启了 Issue 功能。也就是说，<strong>75% 的仓库直接关闭了社区反馈渠道。</strong></p>
-      <p>PR（Pull Request）就更别想了。</p>
-      <p>这是什么概念？这就像开了一家餐厅，然后：</p>
-      <ul>
-        <li>把意见箱焊死了</li>
-        <li>把大众点评的评论区关了</li>
-        <li>在门口贴了张告示："本店不接受任何形式的反馈，觉得不好吃请自行离开"</li>
-      </ul>
-      <p>开源社区的核心精神是什么？是协作、是反馈、是共同改进。关闭 Issue 和 PR 就是在说："我的代码是完美的，你们没有资格评价。"</p>
-      <p>但讽刺的是，他的代码真的完美吗？一个 4 星的 dotfiles 仓库，连接受建议的勇气都没有，完美在哪？</p>
-      <p>更讽刺的是，他自己 fork 了别人的项目（RSSHub、lobehub、nixpkgs 等），享受着开源社区的成果，却不允许别人对他的项目提出任何意见。</p>
-      <p><strong>只享受开源的权利，不承担开源的义务。</strong>这大概就是 MCSeekeri 版本的"开源精神"。</p>
-
-      <h2>四、CE-RAMOS 造谣事件：一篇文章毁掉一个项目</h2>
-      <p>这是 MCSeekeri 最"辉煌"的战绩。</p>
-
-      <h3>事件经过</h3>
-      <p>CE-RAMOS 是 PE 圈的一个项目，致力于提供"近乎 WTG 般的 PE 体验"。MCSeekeri 发布了一篇文章，声称 CE-RAMOS 携带恶意程序，列举了 Ventoy.exe、Everything.exe、cpuz.exe 等文件"带毒"。</p>
-      <p>文章的措辞极具煽动性：</p>
-      <blockquote>"如果是有意为之……那最好仔细检查你的设备是否安全。"</blockquote>
-      <p>这句话的潜台词是：CE-RAMOS 的开发者故意在系统里植入病毒。</p>
-
-      <h3>问题在哪</h3>
-      <p>PE 系统打包第三方工具时，由于重新封装和压缩，杀毒软件误报是极其常见的现象。任何做过 PE 的人都知道这一点。Ventoy 本身就经常被杀软误报，这在 Ventoy 的官方 FAQ 里都有说明。</p>
-      <p>但 MCSeekeri 的文章完全没有提到"误报"的可能性，而是直接定性为"恶意程序"，并暗示开发者"有意为之"。</p>
-      <p>这不是安全研究，这是造谣。</p>
+      <p>这就好比你去医院体检，医生说"这个指标偏高，可能是误差，建议复查"，然后 MCSeekeri 冲进来大喊：<strong>"他得了绝症！如果是有意为之……那最好仔细检查你是不是已经死了！"</strong></p>
 
       <h3>后果</h3>
-      <p>文章发布后，CE-RAMOS 的作者遭到大规模网暴。最终，作者不堪压力，<strong>放弃了项目</strong>。</p>
-      <p>现在访问 <a href="https://ce-ramos.cn">ce-ramos.cn</a>，你只会看到六个字：</p>
-      <blockquote>该项目已停止服务</blockquote>
-      <p>一个人花了一年多时间打磨到 V2.3 PRO 版本的项目，就这样被一篇造谣文章毁了。</p>
-      <p>而 MCSeekeri 呢？他还在 GitHub 上安安静静地维护他的 .nix 配置文件，关着 Issue，关着 PR，仿佛什么都没发生过。</p>
+      <p>CE-RAMOS 的作者遭到大规模网暴。</p>
+      <p>一个花了一年多时间、迭代到 V2.3 PRO 版本的项目，<strong>被迫停服</strong>。</p>
+      <p>现在访问 <a href="https://ce-ramos.cn">ce-ramos.cn</a>，你只会看到：</p>
+      <blockquote><strong>该项目已停止服务</strong></blockquote>
+      <p>六个字。一年多的心血，六个字收场。</p>
+      <p>而造谣者 MCSeekeri 呢？他还在 GitHub 上安安静静地写他的 .nix 配置文件，关着 Issue，关着 PR，在 B 站上宣传他的"自研系统"，仿佛什么都没发生过。</p>
+      <p><strong>杀人诛心，莫过于此。</strong></p>
 
-      <h3>最讽刺的对比</h3>
-      <p>让我们做一个简单的对比：</p>
+      <h3>最恶心的细节</h3>
+      <p>MCSeekeri 在文章里还特意提到 CE-RAMOS 的插件加密密码是 <code>ZQFa08hkGv2@F</code>，并以此暗示"开发团队的人品值得怀疑"。</p>
+      <p>一个给自己 75% 的仓库关闭 Issue 的人，在质疑别人的"人品"。</p>
+      <p>一个把 dotfiles 包装成"自研系统"的人，在质疑别人的"诚信"。</p>
+      <p>一个 0 粉丝的 GitHub 用户，在审判一个有实际用户的项目作者。</p>
+      <p><strong>这大概就是互联网上最经典的"贼喊捉贼"。</strong></p>
+
+      <hr />
+
+      <h2>三、MCSeekeri 的完整技能树</h2>
       <ul>
-        <li>CE-RAMOS：一个真正的 PE 系统，从零开始构建，迭代了一年多，有实际用户</li>
-        <li>Naomi：一堆 NixOS 配置文件，4 颗星，自称"自研系统"</li>
-      </ul>
-      <p>做了真东西的人被逼停服了，写配置文件的人还在吹"自研系统"。</p>
-      <p>这就是 PE 圈的现状：<strong>造谣者安然无恙，创造者被迫退场。</strong></p>
-
-      <h2>五、行为模式总结</h2>
-      <p>综合以上事迹，MCSeekeri 的行为模式可以概括为：</p>
-      <ol>
-        <li><strong>虚假宣传</strong>：把 dotfiles 包装成"自研系统"，在 B 站误导不明真相的观众</li>
-        <li><strong>拒绝反馈</strong>：75% 的仓库关闭 Issue，不接受任何社区意见</li>
-        <li><strong>造谣中伤</strong>：把杀软误报定性为"恶意程序"，暗示开发者故意植毒</li>
-        <li><strong>毫无担当</strong>：造谣导致他人项目停服后，没有任何道歉或澄清</li>
-      </ol>
-      <p>如果说 PE 圈需要一个"最佳反面教材"奖，MCSeekeri 绝对是有力竞争者。</p>
-
-      <h2>六、给 MCSeekeri 的建议</h2>
-      <ul>
-        <li>把 Naomi 的 README 从"自研系统"改成"我的 NixOS 配置文件"——诚实是美德</li>
-        <li>打开你的 Issue 和 PR——如果你的代码真的好，它经得起检验；如果经不起，那更需要反馈</li>
-        <li>给 CE-RAMOS 的作者道个歉——你的一篇文章毁了别人一年多的心血</li>
-        <li>下次发"安全分析"之前，先学学什么叫杀软误报</li>
-        <li>0 粉丝不丢人，造谣才丢人</li>
+        <li>✅ 把 dotfiles 包装成"自研系统" —— 虚假宣传 MAX</li>
+        <li>✅ 关闭 75% 仓库的 Issue —— 拒绝反馈 MAX</li>
+        <li>✅ 把杀软误报定性为"恶意程序" —— 造谣能力 MAX</li>
+        <li>✅ 用"有意为之"暗示开发者故意植毒 —— 人身攻击 MAX</li>
+        <li>✅ 造谣导致项目停服后零道歉 —— 毫无担当 MAX</li>
+        <li>✅ fork 别人项目享受开源，自己关闭 Issue 拒绝开源 —— 双标 MAX</li>
+        <li>✅ 0 粉丝 —— 社会影响力 MIN</li>
+        <li>✅ 4 星 dotfiles —— 技术含量 MIN</li>
+        <li>❌ 自研系统 —— <strong>404 Not Found</strong></li>
       </ul>
 
       <hr />
-      <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基于公开信息整理。MCSeekeri 如果觉得被冤枉了，欢迎打开你的 Issue 来反驳——哦等等，你关了。</p>
+
+      <h2>四、给 MCSeekeri 的安全建议</h2>
+      <p>鉴于 MCSeekeri 的大脑中可能携带多个恶意认知，建议立刻进行以下操作：</p>
+      <ol>
+        <li><strong>全脑杀毒</strong>：清除"dotfiles = 自研系统"这一恶意认知</li>
+        <li><strong>打开 Issue</strong>：如果你的代码真的好，它不怕被检验</li>
+        <li><strong>给 CE-RAMOS 作者道歉</strong>：你欠他的，不是一句"如果是有意为之"能抵消的</li>
+        <li><strong>学习什么叫杀软误报</strong>：这是 PE 圈的基础常识，不会的话建议退圈</li>
+        <li><strong>重新定义 Naomi</strong>：从"自研系统"改成"我的 NixOS 配置文件合集"，诚实不丢人</li>
+      </ol>
+
+      <p>如果是因为认知不足做出了以上行为，那么显然没有理由继续在 PE 圈发表任何"安全分析"。</p>
+      <p>如果是有意为之……</p>
+      <p><strong>……那最好仔细检查你的良心是否还在。</strong></p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基于公开信息整理，行文风格完全模仿 MCSeekeri 造谣 CE-RAMOS 时的原文结构。觉得读着不舒服？那你现在知道 CE-RAMOS 的作者当时是什么感受了。</p>
       <p style="font-size:12px;color:var(--muted);margin-top:12px;">免责声明：本文仅供娱乐与记录用途，不针对任何特定个人，文中所有内容均来源于公开可查的互联网信息。如有雷同，纯属巧合。本站不对读者基于本文内容所做的任何行为承担责任。</p>
 
       <hr />
