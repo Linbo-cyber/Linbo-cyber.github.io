@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>[安全警告] 立刻停止关注 MCSeekeri 并全脑杀毒</title>
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/lang.css" />
 </head>
 <body>
   <main class="wrap">
     <article class="paper">
+      <div class="lang-block" data-lang="zh-CN">
       <h1>[安全警告] 立刻停止关注 MCSeekeri 并全脑杀毒</h1>
       <div class="sub">——一个 NixOS 配置文件搬运工是如何把自己活成 PE 圈公害的</div>
       <div class="meta">2026-02-25</div>
@@ -130,7 +132,7 @@
       <p>MCSeekeri 在文章里还特意提到 CE-RAMOS 的插件加密密码是 <code>ZQFa08hkGv2@F</code>，并以此暗示"开发团队的人品值得怀疑"。</p>
       <p>一个给自己 75% 的仓库关闭 Issue 的人，在质疑别人的"人品"。</p>
       <p>一个把 dotfiles 包装成"自研系统"的人，在质疑别人的"诚信"。</p>
-      <p>一个 0 粉丝的 GitHub 用户，在审判一个有实际用户的项目作者。</p>
+      <p>一个 0 粉丝的 GitHub 用户，在审判一个有实际用户的项目作者。此人来自新加坡，大概是觉得在本地 PE 圈找不到存在感，于是跑到中文互联网来刷存在感——顺便造个谣。</p>
       <p><strong>这大概就是互联网上最经典的"贼喊捉贼"。</strong></p>
 
       <hr />
@@ -167,6 +169,490 @@
       <hr />
       <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基于公开信息整理，行文风格完全模仿 MCSeekeri 造谣 CE-RAMOS 时的原文结构。觉得读着不舒服？那你现在知道 CE-RAMOS 的作者当时是什么感受了。</p>
       <p style="font-size:12px;color:var(--muted);margin-top:12px;">免责声明：本文仅供娱乐与记录用途，不针对任何特定个人，文中所有内容均来源于公开可查的互联网信息。如有雷同，纯属巧合。本站不对读者基于本文内容所做的任何行为承担责任。</p>
+      </div>
+
+      <div class="lang-block" data-lang="zh-TW">
+      <h1>[安全警告] 立刻停止關注 MCSeekeri 並全腦殺毒</h1>
+      <div class="sub">——一個 NixOS 設定檔搬運工是如何把自己活成 PE 圈公害的</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <blockquote>「如果是有意為之……那最好仔細檢查你的裝置是否安全。」<br/>—— MCSeekeri 造謠 CE-RAMOS 時的原話。現在我們把這句話還給他。</blockquote>
+
+      <hr />
+
+      <h2>一、[安全警告] 立刻停止使用 Naomi 並全盤格式化你的智商</h2>
+
+      <p><a href="https://github.com/MCSeekeri/Naomi">Naomi</a> 自稱是「自研系統」，但倉庫內卻攜帶了多個<strong>智商侮辱性內容</strong>。</p>
+      <p>如果您相信過 Naomi 是「自研系統」，建議立刻清除所有相關記憶並進行全腦殺毒。</p>
+
+      <p>首先是倉庫的 Topics 標籤帶毒：</p>
+      <blockquote>
+        <code>dotfiles</code>, <code>nixos-configuration</code>, <code>home-manager</code>, <code>nix-flake</code>
+      </blockquote>
+      <p>此為 MCSeekeri 自己給 Naomi 打的標籤。此為正常人對「自研系統」的理解。<strong>兩者沒有任何交集。</strong></p>
+
+      <p>然後是倉庫根目錄的 <code>flake.nix</code>：</p>
+      <blockquote>
+        <code>inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";</code><br/>
+        <code>inputs.home-manager.url = "github:nix-community/home-manager/release-25.11";</code><br/>
+        <code>inputs.disko.url = "github:nix-community/disko";</code><br/>
+        <code>inputs.stylix.url = "github:danth/stylix";</code>
+      </blockquote>
+      <p>此為 Naomi 的「自研」核心程式碼。此為從 NixOS 社群直接引用的別人寫的工具。<strong>兩者完全一致。</strong></p>
+
+      <p>最後是 <code>modules/</code> 目錄下的全部檔案：</p>
+      <blockquote>
+        boot.nix, fonts.nix, i18n.nix, ssh.nix, users.nix, zram.nix, podman.nix, tailscale.nix...
+      </blockquote>
+      <p>此為 Naomi 的「自研系統模組」。此為任何一個 NixOS 使用者都會寫的基礎設定檔。<strong>差別僅在於資料夾名字不同。</strong></p>
+
+      <p>因為時間關係，暫未對這些檔案進行更細緻的檢查，但是可以確定 Naomi 的所有「自研」內容並不是原創。僅僅是核心設定中就引用了至少<strong>十幾個</strong>社群專案，可想而知所謂的「自研」含量是什麼情況。</p>
+
+      <p>值得注意的是，MCSeekeri 對大部分倉庫<strong>關閉了 Issue 和 PR</strong>，這導致使用者難以在使用前對程式碼品質進行回饋，專案是否靠譜完全依賴於作者的技術水準與自我認知。</p>
+
+      <p>20 個自有倉庫，15 個關閉了 Issue。一般使用者難以提出任何建議。</p>
+
+      <p>同時，MCSeekeri 大量 fork 了社群專案（RSSHub、lobehub、nixpkgs、waline 等），享受著開源社群的一切成果，卻不允許任何人對他的專案提出意見。</p>
+
+      <p>如同「只下載，不上傳」的迅雷一般，<strong>此人的開源精神值得懷疑。</strong></p>
+
+      <p>Naomi 已經在 GitHub 上存在了相當一段時間，作者卻連最基本的<strong>誠實描述</strong>都做不好。如果是因為認知不足，那麼顯然沒有理由繼續相信這麼一個不靠譜的人；如果是有意為之……</p>
+
+      <p><strong>……那最好仔細檢查你的大腦是否安全。</strong></p>
+
+      <hr />
+
+      <h2>一點五、讓我們來欣賞一下這些「自研程式碼」的品質</h2>
+
+      <p>有人可能會說：「雖然不是自研系統，但人家的 .nix 設定檔寫得好也算有價值吧？」</p>
+      <p>好問題。讓我們來看看。</p>
+
+      <p>Naomi 的 <code>hosts/</code> 目錄裡有這些主機設定：costarica、cuba、cyprus、manhattan、seychelles——用國家和地名命名，很有格調。但打開一看：</p>
+
+      <blockquote><code>networking.hostName = "manhattan";</code><br/><code>hardware.cpu.type = "qemu";</code><br/><code>system.stateVersion = "24.11";</code></blockquote>
+
+      <p>這就是他的「自研系統核心程式碼」。設定了一個主機名稱，宣告了 CPU 類型是 qemu 虛擬機，指定了一個版本號。<strong>三行設定，幼稚園水準。</strong></p>
+
+      <p>再看看他的「模組化架構」：</p>
+      <ul>
+        <li><code>boot.nix</code> —— 設定開機項，NixOS 官方文件的 Example 原樣照抄</li>
+        <li><code>fonts.nix</code> —— 裝了幾個字型，任何人 <code>nixos-generate-config</code> 都能產生</li>
+        <li><code>i18n.nix</code> —— 設定了中文語言環境，一行 <code>i18n.defaultLocale</code> 的事</li>
+        <li><code>ssh.nix</code> —— 開了個 SSH，<code>services.openssh.enable = true;</code>，驚天大作</li>
+        <li><code>zram.nix</code> —— 開了 zram，又是一行設定</li>
+      </ul>
+
+      <p>把這些東西拆成單獨的檔案，然後宣稱自己做了「模組化架構」，就像你把一篇作文的每個自然段存成單獨的 Word 文件，然後說自己發明了「分散式文件管理系統」。</p>
+
+      <p>更關鍵的是：<strong>這些設定完全是為他自己的機器寫的。</strong>他的 manhattan 是一台 qemu 虛擬機，他的 seychelles 大概是另一台。這些設定對其他任何人都毫無用處——你不可能拿他的主機名稱、他的硬體設定、他的個人偏好來用在自己的機器上。</p>
+
+      <p>這就是為什麼 GitHub 上有個分類叫 <code>dotfiles</code>——因為這類東西的本質就是<strong>個人設定備份</strong>，方便自己換機器的時候恢復環境。它的受眾是且僅是作者本人。</p>
+
+      <p>所以讓我們再理一遍：</p>
+      <ol>
+        <li>程式碼品質：照抄官方文件 + 一行設定拆一個檔案</li>
+        <li>適用範圍：僅限作者本人的幾台機器</li>
+        <li>社群價值：零（4 顆星，其中大概率包含自己的同情星）</li>
+        <li>對外宣傳：自研系統</li>
+      </ol>
+
+      <p>這不叫自研系統，這叫<strong>公開備份個人電腦設定然後吹牛皮</strong>。</p>
+
+      <p>如果說 Naomi 只是自欺欺人的虛假宣傳，那麼 CE-RAMOS 事件就是實打實的惡意造謠。</p>
+
+      <h3>他做了什麼</h3>
+      <p>MCSeekeri 發布了一篇標題為<strong>「[安全警告] 立刻停止使用 CE-RAMOS 並全盤殺毒」</strong>的文章，聲稱 CE-RAMOS 系統內「攜帶了多個惡意程式」，包括 Ventoy.exe、Everything.exe、cpuz.exe。</p>
+
+      <p>文章的結尾是這樣寫的：</p>
+      <blockquote>「如果是因為能力不足，那麼顯然沒有理由繼續使用這麼一個不成熟的系統，如果是有意為之……那最好仔細檢查你的裝置是否安全。」</blockquote>
+
+      <p>翻譯成白話：<strong>CE-RAMOS 的開發者要嘛是廢物，要嘛是故意給你種病毒的壞人。</strong></p>
+
+      <h3>真相是什麼</h3>
+      <p>任何做過 PE 的人都知道：</p>
+      <ul>
+        <li><strong>Ventoy</strong> 本身就是防毒軟體誤報重災區，官方 FAQ 專門有一節解釋這個問題</li>
+        <li><strong>Everything</strong> 和 <strong>CPU-Z</strong> 在 PE 環境中重新封裝後，雜湊值與官方原版不同是正常現象——因為 PE 需要對工具做適配修改</li>
+        <li>PE 系統打包第三方工具時，防毒軟體誤報率極高，這是<strong>業界常識</strong></li>
+      </ul>
+      <p>MCSeekeri 的文章裡，「誤報」這兩個字<strong>一次都沒出現</strong>。他直接跳過了最基本的排除步驟，把防毒軟體的掃描結果當成了鐵證，然後用「有意為之」四個字完成了從「技術分析」到「人身攻擊」的華麗轉身。</p>
+
+      <p>這就好比你去醫院體檢，醫生說「這個指標偏高，可能是誤差，建議複查」，然後 MCSeekeri 衝進來大喊：<strong>「他得了絕症！如果是有意為之……那最好仔細檢查你是不是已經死了！」</strong></p>
+
+      <h3>後果</h3>
+      <p>CE-RAMOS 的作者遭到大規模網路霸凌。</p>
+      <p>一個花了一年多時間、迭代到 V2.3 PRO 版本的專案，<strong>被迫停止服務</strong>。</p>
+      <p>現在造訪 <a href="https://ce-ramos.cn">ce-ramos.cn</a>，你只會看到：</p>
+      <blockquote><strong>該專案已停止服務</strong></blockquote>
+      <p>六個字。一年多的心血，六個字收場。</p>
+      <p>而造謠者 MCSeekeri 呢？他還在 GitHub 上安安靜靜地寫他的 .nix 設定檔，關著 Issue，關著 PR，在 B 站上宣傳他的「自研系統」，彷彿什麼都沒發生過。</p>
+      <p><strong>殺人誅心，莫過於此。</strong></p>
+
+      <h3>最噁心的細節</h3>
+      <p>MCSeekeri 在文章裡還特意提到 CE-RAMOS 的外掛加密密碼是 <code>ZQFa08hkGv2@F</code>，並以此暗示「開發團隊的人品值得懷疑」。</p>
+      <p>一個給自己 75% 的倉庫關閉 Issue 的人，在質疑別人的「人品」。</p>
+      <p>一個把 dotfiles 包裝成「自研系統」的人，在質疑別人的「誠信」。</p>
+      <p>一個 0 粉絲的 GitHub 使用者，在審判一個有實際使用者的專案作者。此人來自新加坡，大概是覺得在當地 PE 圈找不到存在感，於是跑到中文網路來刷存在感——順便造個謠。</p>
+      <p><strong>這大概就是網路上最經典的「賊喊捉賊」。</strong></p>
+
+      <hr />
+
+      <h2>三、MCSeekeri 的完整技能樹</h2>
+      <ul>
+        <li>✅ 把 dotfiles 包裝成「自研系統」 —— 虛假宣傳 MAX</li>
+        <li>✅ 關閉 75% 倉庫的 Issue —— 拒絕回饋 MAX</li>
+        <li>✅ 把防毒軟體誤報定性為「惡意程式」 —— 造謠能力 MAX</li>
+        <li>✅ 用「有意為之」暗示開發者故意植毒 —— 人身攻擊 MAX</li>
+        <li>✅ 造謠導致專案停服後零道歉 —— 毫無擔當 MAX</li>
+        <li>✅ fork 別人專案享受開源，自己關閉 Issue 拒絕開源 —— 雙標 MAX</li>
+        <li>✅ 0 粉絲 —— 社會影響力 MIN</li>
+        <li>✅ 4 星 dotfiles —— 技術含量 MIN</li>
+        <li>❌ 自研系統 —— <strong>404 Not Found</strong></li>
+      </ul>
+
+      <hr />
+
+      <h2>四、給 MCSeekeri 的安全建議</h2>
+      <p>鑑於 MCSeekeri 的大腦中可能攜帶多個惡意認知，建議立刻進行以下操作：</p>
+      <ol>
+        <li><strong>全腦殺毒</strong>：清除「dotfiles = 自研系統」這一惡意認知</li>
+        <li><strong>打開 Issue</strong>：如果你的程式碼真的好，它不怕被檢驗</li>
+        <li><strong>給 CE-RAMOS 作者道歉</strong>：你欠他的，不是一句「如果是有意為之」能抵消的</li>
+        <li><strong>學習什麼叫防毒軟體誤報</strong>：這是 PE 圈的基礎常識，不會的話建議退圈</li>
+        <li><strong>重新定義 Naomi</strong>：從「自研系統」改成「我的 NixOS 設定檔合集」，誠實不丟人</li>
+      </ol>
+
+      <p>如果是因為認知不足做出了以上行為，那麼顯然沒有理由繼續在 PE 圈發表任何「安全分析」。</p>
+      <p>如果是有意為之……</p>
+      <p><strong>……那最好仔細檢查你的良心是否還在。</strong></p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基於公開資訊整理，行文風格完全模仿 MCSeekeri 造謠 CE-RAMOS 時的原文結構。覺得讀著不舒服？那你現在知道 CE-RAMOS 的作者當時是什麼感受了。</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;">免責聲明：本文僅供娛樂與記錄用途，不針對任何特定個人，文中所有內容均來源於公開可查的網路資訊。如有雷同，純屬巧合。本站不對讀者基於本文內容所做的任何行為承擔責任。</p>
+      </div>
+
+      <div class="lang-block" data-lang="ja">
+      <h1>[セキュリティ警告] 今すぐ MCSeekeri のフォローをやめて脳内ウイルスを駆除せよ</h1>
+      <div class="sub">——NixOS 設定ファイルコピペ職人がいかにして PE 界の公害と化したか</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <blockquote>「もし意図的にやっているなら……デバイスの安全性を確認した方がいい。」<br/>—— MCSeekeri が CE-RAMOS を中傷した時の原文。今、この言葉をそっくりお返しする。</blockquote>
+
+      <hr />
+
+      <h2>一、[セキュリティ警告] 今すぐ Naomi の使用を中止し、IQ をフォーマットせよ</h2>
+
+      <p><a href="https://github.com/MCSeekeri/Naomi">Naomi</a> は「自主開発OS」を自称しているが、リポジトリには<strong>知性を侮辱するコンテンツ</strong>が満載だ。</p>
+      <p>もし Naomi が「自主開発OS」だと信じたことがあるなら、関連する記憶を即座に消去し、脳内フルスキャンを推奨する。</p>
+
+      <p>まずリポジトリの Topics タグが有毒：</p>
+      <blockquote>
+        <code>dotfiles</code>, <code>nixos-configuration</code>, <code>home-manager</code>, <code>nix-flake</code>
+      </blockquote>
+      <p>これは MCSeekeri 自身が Naomi に付けたタグだ。これが普通の人間の「自主開発OS」の理解だ。<strong>両者に交わりは一切ない。</strong></p>
+
+      <p>次にリポジトリルートの <code>flake.nix</code>：</p>
+      <blockquote>
+        <code>inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";</code><br/>
+        <code>inputs.home-manager.url = "github:nix-community/home-manager/release-25.11";</code><br/>
+        <code>inputs.disko.url = "github:nix-community/disko";</code><br/>
+        <code>inputs.stylix.url = "github:danth/stylix";</code>
+      </blockquote>
+      <p>これが Naomi の「自主開発」コアコード。これは NixOS コミュニティから直接引用した他人のツール。<strong>完全に一致している。</strong></p>
+
+      <p>最後に <code>modules/</code> ディレクトリの全ファイル：</p>
+      <blockquote>
+        boot.nix, fonts.nix, i18n.nix, ssh.nix, users.nix, zram.nix, podman.nix, tailscale.nix...
+      </blockquote>
+      <p>これが Naomi の「自主開発システムモジュール」。これはどんな NixOS ユーザーでも書ける基本設定ファイル。<strong>違いはフォルダ名だけ。</strong></p>
+
+      <p>時間の都合上、これらのファイルの詳細な検査はまだだが、Naomi の「自主開発」コンテンツがオリジナルでないことは確定している。コア設定だけで少なくとも<strong>十数個</strong>のコミュニティプロジェクトを引用しており、いわゆる「自主開発」の含有量は推して知るべし。</p>
+
+      <p>注目すべきは、MCSeekeri が大半のリポジトリで<strong>Issue と PR を閉鎖している</strong>こと。これによりユーザーは使用前にコード品質についてフィードバックできず、プロジェクトの信頼性は作者の技術力と自己認識に完全に依存する。</p>
+
+      <p>自前リポジトリ 20 個中、15 個で Issue を閉鎖。一般ユーザーは何も提案できない。</p>
+
+      <p>同時に MCSeekeri はコミュニティプロジェクト（RSSHub、lobehub、nixpkgs、waline 等）を大量に fork し、オープンソースコミュニティの恩恵を享受しながら、自分のプロジェクトには一切の意見を許さない。</p>
+
+      <p>「ダウンロードだけしてアップロードしない」フリーライダーそのもの。<strong>この人物のオープンソース精神は疑わしい。</strong></p>
+
+      <p>Naomi は GitHub 上にかなりの期間存在しているが、作者は最も基本的な<strong>正直な説明</strong>すらできていない。認知不足が原因なら、こんな信用できない人物を信じ続ける理由はない。もし意図的にやっているなら……</p>
+
+      <p><strong>……脳の安全性を確認した方がいい。</strong></p>
+
+      <hr />
+
+      <h2>一・五、この「自主開発コード」の品質を鑑賞しよう</h2>
+
+      <p>「自主開発OSじゃなくても、.nix 設定ファイルの出来が良ければ価値があるのでは？」という人もいるだろう。</p>
+      <p>いい質問だ。見てみよう。</p>
+
+      <p>Naomi の <code>hosts/</code> ディレクトリにはこんなホスト設定がある：costarica、cuba、cyprus、manhattan、seychelles——国名と地名で命名、なかなかオシャレだ。だが開いてみると：</p>
+
+      <blockquote><code>networking.hostName = "manhattan";</code><br/><code>hardware.cpu.type = "qemu";</code><br/><code>system.stateVersion = "24.11";</code></blockquote>
+
+      <p>これが彼の「自主開発OSコアコード」。ホスト名を設定し、CPU タイプが qemu 仮想マシンだと宣言し、バージョン番号を指定。<strong>3行の設定、幼稚園レベル。</strong></p>
+
+      <p>彼の「モジュラーアーキテクチャ」も見てみよう：</p>
+      <ul>
+        <li><code>boot.nix</code> —— ブート設定、NixOS 公式ドキュメントの Example をそのままコピー</li>
+        <li><code>fonts.nix</code> —— フォントを数個インストール、誰でも <code>nixos-generate-config</code> で生成可能</li>
+        <li><code>i18n.nix</code> —— 中国語ロケール設定、<code>i18n.defaultLocale</code> 一行で済む話</li>
+        <li><code>ssh.nix</code> —— SSH を有効化、<code>services.openssh.enable = true;</code>、大発明だ</li>
+        <li><code>zram.nix</code> —— zram を有効化、またもや一行設定</li>
+      </ul>
+
+      <p>これらを個別ファイルに分割して「モジュラーアーキテクチャ」を名乗るのは、作文の各段落を別々の Word ファイルに保存して「分散ドキュメント管理システムを発明した」と言うようなものだ。</p>
+
+      <p>さらに重要なのは：<strong>これらの設定は完全に彼自身のマシン用だ。</strong>manhattan は qemu 仮想マシン、seychelles はおそらく別のマシン。これらの設定は他の誰にとっても無価値——彼のホスト名、彼のハードウェア設定、彼の個人的好みを自分のマシンに使うことはできない。</p>
+
+      <p>だから GitHub に <code>dotfiles</code> というカテゴリがある——この手のものの本質は<strong>個人設定バックアップ</strong>で、マシン交換時に環境を復元するためのもの。対象読者は作者本人のみ。</p>
+
+      <p>整理しよう：</p>
+      <ol>
+        <li>コード品質：公式ドキュメントのコピー + 一行設定を一ファイルに分割</li>
+        <li>適用範囲：作者本人の数台のマシンのみ</li>
+        <li>コミュニティ価値：ゼロ（星4つ、うち自分の同情星を含む確率大）</li>
+        <li>対外宣伝：自主開発OS</li>
+      </ol>
+
+      <p>これは自主開発OSではない。<strong>個人PCの設定を公開バックアップしてイキっている</strong>だけだ。</p>
+
+      <p>Naomi が自己欺瞞の虚偽宣伝に過ぎないとすれば、CE-RAMOS 事件は正真正銘の悪意ある中傷だ。</p>
+
+      <h3>彼は何をしたか</h3>
+      <p>MCSeekeri は<strong>「[セキュリティ警告] 今すぐ CE-RAMOS の使用を中止しフルスキャンせよ」</strong>という記事を公開し、CE-RAMOS システム内に「複数のマルウェアが含まれている」と主張した。Ventoy.exe、Everything.exe、cpuz.exe を挙げて。</p>
+
+      <p>記事の結びはこうだ：</p>
+      <blockquote>「能力不足が原因なら、こんな未熟なシステムを使い続ける理由はない。もし意図的にやっているなら……デバイスの安全性を確認した方がいい。」</blockquote>
+
+      <p>平たく言えば：<strong>CE-RAMOS の開発者は無能か、意図的にウイルスを仕込む悪人のどちらかだ。</strong></p>
+
+      <h3>真相</h3>
+      <p>PE を作ったことがある人なら誰でも知っている：</p>
+      <ul>
+        <li><strong>Ventoy</strong> はアンチウイルスの誤検知の常連で、公式 FAQ に専用セクションがある</li>
+        <li><strong>Everything</strong> と <strong>CPU-Z</strong> は PE 環境で再パッケージするとハッシュ値が公式版と異なるのは当然——PE はツールの適応修正が必要だから</li>
+        <li>PE システムがサードパーティツールをパッケージする際、アンチウイルスの誤検知率は極めて高い。これは<strong>業界の常識</strong></li>
+      </ul>
+      <p>MCSeekeri の記事で「誤検知」という言葉は<strong>一度も登場しない</strong>。最も基本的な除外ステップを飛ばし、アンチウイルスのスキャン結果を鉄証として扱い、「意図的に」の四文字で「技術分析」から「人格攻撃」への華麗な転身を遂げた。</p>
+
+      <p>これは病院で健康診断を受けて、医者が「この数値は高めですが、誤差かもしれないので再検査を」と言った時に、MCSeekeri が飛び込んできて叫ぶようなものだ：<strong>「末期だ！もし意図的にやっているなら……もう死んでいないか確認した方がいい！」</strong></p>
+
+      <h3>結果</h3>
+      <p>CE-RAMOS の作者は大規模なネットいじめに遭った。</p>
+      <p>一年以上かけて V2.3 PRO まで進化させたプロジェクトが、<strong>サービス停止に追い込まれた</strong>。</p>
+      <p>今 <a href="https://ce-ramos.cn">ce-ramos.cn</a> にアクセスすると、こう表示される：</p>
+      <blockquote><strong>このプロジェクトはサービスを停止しました</strong></blockquote>
+      <p>たった一行。一年以上の努力が、一行で終わった。</p>
+      <p>中傷者 MCSeekeri はどうか？GitHub で静かに .nix 設定ファイルを書き続け、Issue を閉じ、PR を閉じ、Bilibili で「自主開発OS」を宣伝し、何事もなかったかのように振る舞っている。</p>
+      <p><strong>人を殺すのに刃物は要らない。</strong></p>
+
+      <h3>最も胸糞悪いディテール</h3>
+      <p>MCSeekeri は記事中で CE-RAMOS のプラグイン暗号化パスワード <code>ZQFa08hkGv2@F</code> にわざわざ言及し、「開発チームの人格は疑わしい」と示唆した。</p>
+      <p>自分のリポジトリの 75% で Issue を閉鎖している人間が、他人の「人格」を疑問視している。</p>
+      <p>dotfiles を「自主開発OS」と偽っている人間が、他人の「誠実さ」を疑問視している。</p>
+      <p>フォロワー 0 人の GitHub ユーザーが、実際のユーザーを持つプロジェクト作者を裁いている。しかもこの人物はシンガポール出身で、地元の PE コミュニティでは存在感を示せなかったらしく、中国語インターネットに乗り込んで存在感を稼ぎに来た——ついでにデマも撒きながら。</p>
+      <p><strong>これぞインターネット史上最も典型的な「泥棒が泥棒を捕まえろと叫ぶ」だ。</strong></p>
+
+      <hr />
+
+      <h2>三、MCSeekeri の完全スキルツリー</h2>
+      <ul>
+        <li>✅ dotfiles を「自主開発OS」と偽装 —— 虚偽宣伝 MAX</li>
+        <li>✅ 75% のリポジトリで Issue を閉鎖 —— フィードバック拒否 MAX</li>
+        <li>✅ アンチウイルスの誤検知を「マルウェア」と断定 —— 中傷能力 MAX</li>
+        <li>✅ 「意図的に」で開発者の故意のウイルス植え付けを示唆 —— 人格攻撃 MAX</li>
+        <li>✅ 中傷によるプロジェクト停止後、謝罪ゼロ —— 無責任 MAX</li>
+        <li>✅ 他人のプロジェクトを fork してオープンソースを享受、自分は Issue 閉鎖 —— ダブスタ MAX</li>
+        <li>✅ フォロワー 0 人 —— 社会的影響力 MIN</li>
+        <li>✅ 星 4 つの dotfiles —— 技術力 MIN</li>
+        <li>❌ 自主開発OS —— <strong>404 Not Found</strong></li>
+      </ul>
+
+      <hr />
+
+      <h2>四、MCSeekeri へのセキュリティ勧告</h2>
+      <p>MCSeekeri の脳内に複数の悪意ある認知が存在する可能性があるため、以下の操作を直ちに実行することを推奨する：</p>
+      <ol>
+        <li><strong>脳内フルスキャン</strong>：「dotfiles = 自主開発OS」という悪意ある認知を駆除</li>
+        <li><strong>Issue を開放</strong>：コードが本当に優れているなら、検証を恐れる必要はない</li>
+        <li><strong>CE-RAMOS 作者に謝罪</strong>：あなたが負っている借りは「もし意図的にやっているなら」の一言で帳消しにはならない</li>
+        <li><strong>アンチウイルスの誤検知を学習</strong>：PE 界の基礎常識。知らないなら引退を推奨</li>
+        <li><strong>Naomi を再定義</strong>：「自主開発OS」から「俺の NixOS 設定ファイル集」へ。正直は恥ではない</li>
+      </ol>
+
+      <p>認知不足で以上の行為に及んだのなら、PE 界でいかなる「セキュリティ分析」も発表し続ける理由はない。</p>
+      <p>もし意図的にやっているなら……</p>
+      <p><strong>……良心がまだ残っているか確認した方がいい。</strong></p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">本記事は公開情報に基づいて整理したもので、文体は MCSeekeri が CE-RAMOS を中傷した際の原文構造を完全に模倣している。読んでいて不快？それが当時の CE-RAMOS 作者の気持ちだ。</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;">免責事項：本記事は娯楽および記録目的のみであり、特定の個人を対象としたものではありません。記事中のすべての内容は公開されたインターネット情報に基づいています。類似点がある場合は偶然の一致です。本サイトは読者が本記事の内容に基づいて行ういかなる行為についても責任を負いません。</p>
+      </div>
+
+      <div class="lang-block" data-lang="en">
+      <h1>[SECURITY ALERT] Stop Following MCSeekeri Immediately and Disinfect Your Brain</h1>
+      <div class="sub">— How a NixOS config file copy-paster became a public menace in the PE community</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <blockquote>"If this was intentional… you'd better check whether your device is safe."<br/>— MCSeekeri's own words when slandering CE-RAMOS. We're returning them to sender.</blockquote>
+
+      <hr />
+
+      <h2>I. [SECURITY ALERT] Stop Using Naomi Immediately and Format Your IQ</h2>
+
+      <p><a href="https://github.com/MCSeekeri/Naomi">Naomi</a> claims to be a "self-developed OS," but the repository contains multiple instances of <strong>intelligence-insulting content</strong>.</p>
+      <p>If you ever believed Naomi was a "self-developed OS," we recommend immediately purging all related memories and running a full brain scan.</p>
+
+      <p>First, the repository's Topics tags are toxic:</p>
+      <blockquote>
+        <code>dotfiles</code>, <code>nixos-configuration</code>, <code>home-manager</code>, <code>nix-flake</code>
+      </blockquote>
+      <p>These are the tags MCSeekeri himself gave Naomi. This is what normal people understand as a "self-developed OS." <strong>The two have zero overlap.</strong></p>
+
+      <p>Then there's the root <code>flake.nix</code>:</p>
+      <blockquote>
+        <code>inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";</code><br/>
+        <code>inputs.home-manager.url = "github:nix-community/home-manager/release-25.11";</code><br/>
+        <code>inputs.disko.url = "github:nix-community/disko";</code><br/>
+        <code>inputs.stylix.url = "github:danth/stylix";</code>
+      </blockquote>
+      <p>This is Naomi's "self-developed" core code. This is other people's tools pulled directly from the NixOS community. <strong>They are identical.</strong></p>
+
+      <p>Finally, every file under <code>modules/</code>:</p>
+      <blockquote>
+        boot.nix, fonts.nix, i18n.nix, ssh.nix, users.nix, zram.nix, podman.nix, tailscale.nix...
+      </blockquote>
+      <p>These are Naomi's "self-developed system modules." These are basic config files any NixOS user would write. <strong>The only difference is the folder name.</strong></p>
+
+      <p>Due to time constraints, we haven't done a more detailed inspection of these files, but it's certain that none of Naomi's "self-developed" content is original. The core config alone references at least <strong>a dozen</strong> community projects — you can imagine what the actual "self-developed" content ratio looks like.</p>
+
+      <p>Notably, MCSeekeri has <strong>disabled Issues and PRs</strong> on most of his repositories, making it impossible for users to provide feedback on code quality before use. Whether the project is reliable depends entirely on the author's technical skill and self-awareness.</p>
+
+      <p>20 personal repositories, 15 with Issues disabled. Regular users can't make any suggestions.</p>
+
+      <p>Meanwhile, MCSeekeri has forked numerous community projects (RSSHub, lobehub, nixpkgs, waline, etc.), enjoying all the fruits of the open-source community while refusing to let anyone comment on his own projects.</p>
+
+      <p>Like a leech who only downloads and never uploads, <strong>this person's open-source spirit is questionable.</strong></p>
+
+      <p>Naomi has existed on GitHub for quite some time, yet the author can't even manage the most basic <strong>honest description</strong>. If it's due to ignorance, there's clearly no reason to trust such an unreliable person. If it's intentional…</p>
+
+      <p><strong>…you'd better check whether your brain is safe.</strong></p>
+
+      <hr />
+
+      <h2>I.V. Let's Appreciate the Quality of This "Self-Developed Code"</h2>
+
+      <p>Some might say: "Even if it's not a self-developed OS, the .nix config files could still be valuable if they're well-written, right?"</p>
+      <p>Good question. Let's take a look.</p>
+
+      <p>Naomi's <code>hosts/</code> directory contains these host configs: costarica, cuba, cyprus, manhattan, seychelles — named after countries and places, very classy. But open them up:</p>
+
+      <blockquote><code>networking.hostName = "manhattan";</code><br/><code>hardware.cpu.type = "qemu";</code><br/><code>system.stateVersion = "24.11";</code></blockquote>
+
+      <p>This is his "self-developed OS core code." Set a hostname, declare the CPU type as qemu VM, specify a version number. <strong>Three lines of config. Kindergarten level.</strong></p>
+
+      <p>Let's look at his "modular architecture":</p>
+      <ul>
+        <li><code>boot.nix</code> — boot config, copied verbatim from the NixOS official docs Example</li>
+        <li><code>fonts.nix</code> — installed a few fonts, anyone can generate this with <code>nixos-generate-config</code></li>
+        <li><code>i18n.nix</code> — set Chinese locale, a one-liner <code>i18n.defaultLocale</code></li>
+        <li><code>ssh.nix</code> — enabled SSH, <code>services.openssh.enable = true;</code>, groundbreaking stuff</li>
+        <li><code>zram.nix</code> — enabled zram, another one-liner</li>
+      </ul>
+
+      <p>Splitting these into separate files and claiming "modular architecture" is like saving each paragraph of an essay as a separate Word document and claiming you invented a "distributed document management system."</p>
+
+      <p>More critically: <strong>these configs are written entirely for his own machines.</strong> His manhattan is a qemu VM, his seychelles is probably another one. These configs are useless to anyone else — you can't use his hostname, his hardware config, or his personal preferences on your own machine.</p>
+
+      <p>That's why GitHub has a category called <code>dotfiles</code> — because this stuff is essentially <strong>personal config backup</strong>, meant for restoring your own environment when switching machines. The audience is the author and only the author.</p>
+
+      <p>So let's recap:</p>
+      <ol>
+        <li>Code quality: copied from official docs + one config line per file</li>
+        <li>Applicability: only the author's own machines</li>
+        <li>Community value: zero (4 stars, probably including his own pity star)</li>
+        <li>Public branding: self-developed OS</li>
+      </ol>
+
+      <p>This isn't a self-developed OS. This is <strong>publicly backing up your PC settings and bragging about it</strong>.</p>
+
+      <p>If Naomi is just self-deceptive false advertising, the CE-RAMOS incident is straight-up malicious defamation.</p>
+
+      <h3>What He Did</h3>
+      <p>MCSeekeri published an article titled <strong>"[SECURITY ALERT] Stop Using CE-RAMOS Immediately and Run a Full Antivirus Scan"</strong>, claiming CE-RAMOS contained "multiple malicious programs," including Ventoy.exe, Everything.exe, and cpuz.exe.</p>
+
+      <p>The article concluded:</p>
+      <blockquote>"If it's due to incompetence, there's clearly no reason to continue using such an immature system. If it's intentional… you'd better check whether your device is safe."</blockquote>
+
+      <p>Translation: <strong>CE-RAMOS's developer is either incompetent or deliberately planting viruses.</strong></p>
+
+      <h3>The Truth</h3>
+      <p>Anyone who's ever built a PE knows:</p>
+      <ul>
+        <li><strong>Ventoy</strong> is a notorious false-positive magnet — the official FAQ has an entire section about it</li>
+        <li><strong>Everything</strong> and <strong>CPU-Z</strong> will have different hashes from official versions when repackaged for PE — because PE requires adaptation modifications</li>
+        <li>When PE systems package third-party tools, antivirus false-positive rates are extremely high — this is <strong>industry common knowledge</strong></li>
+      </ul>
+      <p>In MCSeekeri's article, the words "false positive" <strong>never appear once</strong>. He skipped the most basic elimination step, treated antivirus scan results as ironclad evidence, then used "if intentional" to execute a graceful pivot from "technical analysis" to "character assassination."</p>
+
+      <p>It's like going to the hospital for a checkup, the doctor says "this reading is a bit high, could be an error, recommend a retest," and MCSeekeri bursts in screaming: <strong>"He's terminally ill! If it's intentional… you'd better check if you're already dead!"</strong></p>
+
+      <h3>The Consequences</h3>
+      <p>CE-RAMOS's author was subjected to massive online harassment.</p>
+      <p>A project that took over a year to develop, iterated to V2.3 PRO, was <strong>forced to shut down</strong>.</p>
+      <p>Visit <a href="https://ce-ramos.cn">ce-ramos.cn</a> now and you'll see:</p>
+      <blockquote><strong>This project has been discontinued</strong></blockquote>
+      <p>Six words. Over a year of work, six words to end it.</p>
+      <p>And the slanderer MCSeekeri? Still quietly writing his .nix config files on GitHub, Issues closed, PRs closed, promoting his "self-developed OS" on Bilibili, as if nothing ever happened.</p>
+      <p><strong>Character assassination at its finest.</strong></p>
+
+      <h3>The Most Disgusting Detail</h3>
+      <p>MCSeekeri specifically mentioned CE-RAMOS's plugin encryption password <code>ZQFa08hkGv2@F</code> in his article, using it to imply "the development team's character is questionable."</p>
+      <p>A person who disabled Issues on 75% of his own repositories is questioning others' "character."</p>
+      <p>A person who rebranded dotfiles as a "self-developed OS" is questioning others' "integrity."</p>
+      <p>A GitHub user with 0 followers is passing judgment on a project author with actual users. This guy is from Singapore, apparently couldn't find any relevance in the local PE scene, so he came to the Chinese internet to farm clout — and spread some slander while he was at it.</p>
+      <p><strong>This is probably the most textbook case of "the pot calling the kettle black" on the internet.</strong></p>
+
+      <hr />
+
+      <h2>III. MCSeekeri's Complete Skill Tree</h2>
+      <ul>
+        <li>✅ Rebranding dotfiles as "self-developed OS" — False Advertising MAX</li>
+        <li>✅ Disabling Issues on 75% of repos — Feedback Rejection MAX</li>
+        <li>✅ Labeling antivirus false positives as "malware" — Slander Capability MAX</li>
+        <li>✅ Using "if intentional" to imply deliberate virus planting — Character Assassination MAX</li>
+        <li>✅ Zero apology after slander caused project shutdown — Zero Accountability MAX</li>
+        <li>✅ Forking others' projects for open-source benefits while closing own Issues — Double Standards MAX</li>
+        <li>✅ 0 followers — Social Influence MIN</li>
+        <li>✅ 4-star dotfiles — Technical Merit MIN</li>
+        <li>❌ Self-developed OS — <strong>404 Not Found</strong></li>
+      </ul>
+
+      <hr />
+
+      <h2>IV. Security Recommendations for MCSeekeri</h2>
+      <p>Given that MCSeekeri's brain may contain multiple malicious cognitions, the following operations are recommended immediately:</p>
+      <ol>
+        <li><strong>Full brain scan</strong>: Purge the malicious cognition "dotfiles = self-developed OS"</li>
+        <li><strong>Enable Issues</strong>: If your code is truly good, it shouldn't fear scrutiny</li>
+        <li><strong>Apologize to the CE-RAMOS author</strong>: What you owe can't be offset by a single "if intentional"</li>
+        <li><strong>Learn what antivirus false positives are</strong>: This is PE 101. If you don't know, consider retiring</li>
+        <li><strong>Redefine Naomi</strong>: Change "self-developed OS" to "my NixOS config file collection." Honesty isn't shameful</li>
+      </ol>
+
+      <p>If ignorance caused the above behavior, there's clearly no reason to continue publishing any "security analysis" in the PE community.</p>
+      <p>If it was intentional…</p>
+      <p><strong>…you'd better check whether your conscience still exists.</strong></p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">This article is compiled from public information, with a writing style that completely mirrors the structure of MCSeekeri's original slander against CE-RAMOS. Uncomfortable reading this? Now you know how the CE-RAMOS author felt.</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;">Disclaimer: This article is for entertainment and documentation purposes only, not targeting any specific individual. All content is sourced from publicly available internet information. Any resemblance is purely coincidental. This site assumes no responsibility for any actions taken by readers based on this article's content.</p>
+      </div>
 
       <hr />
       <h2 style="font-size:20px;margin:0 0 12px;">评论</h2>
@@ -188,5 +674,6 @@
       <p style="margin-top:20px;"><a href="/">← 返回首页</a></p>
     </article>
   </main>
+  <script src="/lang.js"></script>
 </body>
 </html>

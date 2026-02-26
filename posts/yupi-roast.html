@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>代码之父：程序员鱼皮全网臭闻大赏</title>
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/lang.css" />
 </head>
 <body>
   <main class="wrap">
     <article class="paper">
+
+      <div class="lang-block" data-lang="zh-CN">
       <h1>代码之父：程序员鱼皮全网臭闻大赏</h1>
       <div class="sub">——一个"写了9年代码"的营销号是如何把自己活成反面教材的</div>
       <div class="meta">2026-02-25</div>
@@ -148,6 +151,436 @@
 
       <hr />
       <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基于公开信息整理。如有不实之处，欢迎鱼皮本人来纠正——建议先搞清楚"后门"和"开发者模式"的区别再来。另外，别忘了给你的服务器装个Docker。🤣🤣🤣</p>
+      </div>
+
+
+      <div class="lang-block" data-lang="zh-TW">
+      <h1>程式之父：程式設計師魚皮全網臭聞大賞</h1>
+      <div class="sub">——一個「寫了9年程式」的行銷號是如何把自己活成反面教材的</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <blockquote>
+        「他賺錢靠的不是技術，而是把自己的無能包裝成內容。」
+      </blockquote>
+
+      <h2>一、人物簡介：到底是工程師還是直播主？</h2>
+      <p>程式設計師魚皮，B站82萬粉絲UP主，自稱「前騰訊全端工程師」，「寫了9年程式」。目前經營著一個叫 codefather.cn（程式之父）的程式導航網站，一個叫「面試鴨」的刷題網站，以及一個付費知識星球。</p>
+      <p>注意他的B站簡介：「前騰訊開發」——為什麼是前？因為騰訊已經不要他了。至於為什麼不要他，看完本文你就明白了。</p>
+      <p>他的推特簡介更精彩：「專案狂魔，10+上線產品」——網路黑話翻譯：10→十→💩，所以應該讀作「💩+上線產品」。懂的都懂。</p>
+
+      <h2>二、小紅書「後門」事件：9年程式白寫了</h2>
+      <h3>事件經過</h3>
+      <p>2025年6月18日，有網友發現小紅書安卓客戶端的一個隱藏除錯入口：在設定頁面連續點擊標題6次，輸入「xhsdev」即可進入開發者模式。這跟安卓手機連點版本號進開發者選項是一個原理——業界常見的除錯工具。</p>
+      <p>然而魚皮看到後如獲至寶，先是謹慎地等小紅書修復完畢（畢竟不能得罪金主爸爸），然後火速發布影片：「突發，小紅書開發者後門被破解！機密嚴重洩露！」</p>
+      <p>整個資安圈笑了。</p>
+
+      <h3>被打臉</h3>
+      <p>B站資安博主「邊亮」（一位真正拿過蘋果、微軟0day致謝的資安研究員）隨後發影片：「開發者模式是後門？洩露隱私？專業人士打臉！」——17萬播放，8600按讚。</p>
+      <p>另一位博主直接說：「魚皮真的說錯了，這其實是很正常的開發者除錯。」</p>
+      <p>開發者模式和後門的區別，就像「員工通道」和「盜洞」的區別——你不能因為看見百貨公司有個員工通道就衝進去喊「我發現後門了！」</p>
+
+      <h3>經典善後</h3>
+      <p>被打臉後，魚皮的操作很標準：悄悄刪影片 + 發個不痛不癢的回應說「我缺少網路安全知識」。</p>
+      <p>寫了9年程式，缺少的不是網路安全知識，缺少的是基本常識吧？安卓開發者模式你沒用過？還是說這9年全花在寫知識星球教學上了？</p>
+      <p>博主 Wibus 的評價更犀利：身為一名9年經驗的開發者，基本的資安常識是必備素養。把開發者模式說成「後門」，要嘛是為了流量故意誇大其詞，要嘛是真的什麼都不懂。無論哪種，都蠻丟臉的。</p>
+
+      <h2>三、「too_long_too_long_too_long...」：駭客用暱稱教你做事</h2>
+      <p>魚皮的B站有個合集叫「程式設計師之恥」，目前更新到了第22期，堪稱B站最長壽的自黑連續劇。其中最經典的一期是2022年的暱稱注入事件。</p>
+
+      <h3>天才級攻擊</h3>
+      <p>有位天才使用者把自己的暱稱改成了：</p>
+      <p><code>too_long_too_long_too_long_too_long_too_long_too_long...</code></p>
+      <p>翻譯：「太長了太長了太長了太長了太長了...」——無限迴圈，一個暱稱 3.1MB。</p>
+      <p>人家駭客已經在用暱稱告訴你問題出在哪了！</p>
+      <p>「老兄，太長了，你該加個長度限制了。」然而魚皮的後端愣是連個基本的輸入驗證都沒有。</p>
+      <p>更絕的是，這位大聰明還自己回覆了自己。API回傳時暱稱載入兩遍，單筆回應直接飆到 6.2MB，網站當場暴斃。</p>
+      <p>彈幕瘋了：「靠北人才」、「當年爆破tskk直播間的核武器」、「被迫進步」。畫面切到核彈爆炸，字幕寫著「就爆了」——網站和觀眾一起爆了。</p>
+
+      <h3>修復清單（全部沒做）</h3>
+      <ul>
+        <li>暱稱長度限制 ✗</li>
+        <li>API回應大小限制 ✗</li>
+        <li>分頁載入 ✗</li>
+        <li>使用者輸入驗證 ✗</li>
+      </ul>
+      <p>以上任何一條都能阻止這次攻擊。但一條都沒做。這就是「騰訊全端」——全端的意思是：全部技術棧都有漏洞。</p>
+
+      <h2>四、年更被打系列：「是不是每年都得被暴擊一次？」</h2>
+
+      <h3>2023年：賠了1.5萬的賣慘名場面</h3>
+      <p>網站又被攻擊，魚皮拍影片哭訴「沒想到又被攻擊了！賠了1.5萬，我真服了！」字幕寫著「是不是每年我都得被暴擊一次」。彈幕統一回答：是的。</p>
+
+      <h3>2025年12月：伺服器淪為礦場</h3>
+      <p>Next.js已知漏洞不打補丁 + 沒有Docker容器隔離 + 寶塔面板裸跑 = 駭客樂園。</p>
+      <p>終端截圖的檔案列表堪稱行為藝術：</p>
+      <ul>
+        <li><code>xmrig-6.24.0</code> ← 門羅幣礦機，用你的CPU幫別人賺錢</li>
+        <li><code>kal.tar.gz</code> ← 駭客工具包，寄存在你家</li>
+        <li><code>sex.sh</code> ← 這個...反正不是你寫的</li>
+      </ul>
+      <p>駭客把他伺服器當自助倉庫，來去自如，賓至如歸。彈幕評論：「每日被入侵」、「這就是黃金體驗」。</p>
+      <p>一個教別人寫程式的人，自己的伺服器連Docker都不裝。這就好比駕訓班教練不繫安全帶。</p>
+
+      <h3>2026年2月：AI帳單1.8萬台幣...不對，人民幣</h3>
+      <p>信用卡顯示AI服務費 $2,466，發推感嘆「沒想到要為AI花這麼多錢」。考慮到「10+💩上線產品」基本全靠Cursor生成，這1.8萬就是他整個「開發團隊」的月薪。</p>
+      <p>一個月花1.8萬讓AI寫程式，產出的網站連輸入驗證都沒有——這投入產出比，怕是連AI都覺得委屈。</p>
+
+      <h2>五、GitHub控評事件：玩不起就刪庫</h2>
+
+      <h3>rubbish-yingxiaohao 事件</h3>
+      <p>魚皮在GitHub上有個專案叫 rubbish-yingxiaohao（垃圾行銷號辨識器）——諷刺的是，他自己就是最大的行銷號。</p>
+      <p>有開發者在V2EX發文揭露：有人給這個專案提了個PR（拉取請求），結果魚皮的操作是：</p>
+      <ol>
+        <li>把PR的標題和內容改掉（改成了小學生程度的內容）</li>
+        <li>鎖定PR（讓別人無法修改或刪除）</li>
+        <li>最後直接刪除整個儲存庫，連同所有社群貢獻一起消失</li>
+      </ol>
+      <p>V2EX網友評價：「大概是怕被發現那個白癡PR有紀錄吧。」</p>
+
+      <h3>知乎封禁異見</h3>
+      <p>更有意思的是，如果你在知乎提問「如何評價程式設計師魚皮」，問題會直接被封禁，理由是「侵犯他人隱私」。脈脈上罵魚皮的動態也被清理乾淨。</p>
+      <p>V2EX使用者一針見血：「如果你在任何一個有騰訊參股的軟體搜尋此人，你全部搜到的都是正面評價。」</p>
+      <p>一個做「垃圾行銷號辨識器」的人，自己就是最需要被辨識的行銷號。一個號稱「開源精神」的人，PR被嘲諷了就刪庫跑路。這大概就是魚皮版的「開源」——開你的源，閉我的嘴。</p>
+
+      <h2>六、知識星球：付費割韭菜的藝術</h2>
+
+      <h3>內容品質</h3>
+      <p>V2EX、牛客網上對魚皮知識星球的評價高度一致：</p>
+      <blockquote>
+        「沒有實質內容和技術含量，總的來說就是一個騙騙小白的小丑。」<br/>
+        「群裡內容無非就是網上找的資源、打卡學習等等。」<br/>
+        「資工最好的內容99%是免費的，何必花錢開知識星球？」<br/>
+        「以前唸書時把這些程式公眾號博主奉若至寶，工作兩年後回頭看，全是騙新人入坑割韭菜的鐮刀。」
+      </blockquote>
+      <p>有人用免費資源自學，拿了字節、微軟、亞馬遜offer；而花錢加入魚皮星球的人，得到的是一堆網上免費就能找到的資源和「打卡學習」的儀式感。</p>
+
+      <h3>本質分析</h3>
+      <p>知乎有人總結得精闢：「魚皮賺錢是因為他是直播主，不是因為他技術強。你別學他找工作，你可以學他的撈錢方法。」</p>
+      <p>說白了，魚皮的商業模式是：</p>
+      <p>用「前騰訊」背書吸引小白 → 用免費影片建立信任 → 導流到付費知識星球 → 用CRUD專案包裝成「實戰教學」 → 收割完畢，下一批</p>
+
+      <h2>七、情人節特輯：AI女友名場面</h2>
+      <p>2026年情人節，魚皮發推：「給大家介紹一下我的女朋友——魚小妹」。</p>
+      <p>點開一看：用GLM-5做的AI女友，部署在雲端伺服器上接入QQ，「掏出手機就能聊，情緒價值拉滿」。</p>
+      <p>聊天截圖裡，AI生成的「女友自拍」左下角清清楚楚寫著「AI生成」兩個字。</p>
+      <p>操作流程：花幾萬塊買AI → 讓AI幫自己寫程式 → 用AI寫的程式做了個AI女友 → 跟AI女友聊天 → 截圖發推特 → 預告「晚點上教學」。</p>
+      <p>好傢伙，教你怎麼給自己造虛擬女友都能做成課程賣錢。萬物皆可導流，魚皮誠不欺我。</p>
+
+      <h2>八、從翻車到變現的永動機</h2>
+      <p>如果你以為魚皮只是技術菜雞，那就大錯特錯了。他真正滿級的技能樹是自媒體經營。</p>
+      <p>觀察他的內容模式，你會發現一個精密的商業永動機：</p>
+      <p>出事故 → 拍影片賣慘 → 引發討論獲取流量 → 影片底下掛¥109面試題廣告 → 等待下一次事故（平均3-6個月）</p>
+      <ul>
+        <li>網站被打？影片底下掛課程。</li>
+        <li>被種礦機？出一期「雲端服務安全教學」。</li>
+        <li>小紅書開發者模式？先等修復再發影片蹭熱度。</li>
+        <li>做了AI女友？「保姆級教學來了！」</li>
+      </ul>
+      <p>「程式設計師之恥」系列22期，每一期都是一次完美的導流素材。別人的恥辱是黑歷史，魚皮的恥辱是內容資產。</p>
+
+      <h2>九、「程式之父」的含金量</h2>
+      <p>codefather.cn——程式之父。一個自己寫的程式連輸入驗證都沒有的人，自稱「程式之父」。</p>
+      <p>那程式管他叫什麼？叫爸嗎？</p>
+      <p>這個網站現在主要靠Cursor（AI程式工具）維護。也就是說，codefather.cn的真正開發者是Claude和GPT，魚皮充其量是個維運——還是那種會把伺服器搞成礦場的維運。</p>
+      <p>2025年12月才註冊推特，目標2萬粉，簡介寫著「創業中」。翻譯：國內韭菜割完了，準備出海割洋韭菜。</p>
+
+      <h2>十、結語</h2>
+      <p>程式設計師魚皮的「程式設計師之恥」系列已經22期了。以他的翻車頻率來看，這個系列大概率會比《名偵探柯南》還長。</p>
+      <p>只要他繼續用寶塔面板裸跑Node.js、繼續不做輸入驗證、繼續把開發者模式叫後門、繼續讓駭客用too_long暱稱教他做人——這個系列，永遠不缺素材。</p>
+      <p>而那位把暱稱改成「too_long_too_long_too_long...」的無名英雄，大概是整件事裡最有幽默感的人。他不僅炸了魚皮的網站，還用暱稱留下了一句完美的Code Review：</p>
+      <p><strong>「太長了，老兄。加個長度限制吧。」</strong></p>
+      <p>可惜，寫了9年程式的「程式之父」，沒看懂。</p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">本文基於公開資訊整理。如有不實之處，歡迎魚皮本人來糾正——建議先搞清楚「後門」和「開發者模式」的區別再來。另外，別忘了給你的伺服器裝個Docker。🤣🤣🤣</p>
+      </div>
+
+
+      <div class="lang-block" data-lang="ja">
+      <h1>コードの父：プログラマー魚皮・全ネット醜聞大賞</h1>
+      <div class="sub">——「9年コードを書いた」マーケティングアカウントが、いかにして反面教師になったか</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <blockquote>
+        「彼が稼いでいるのは技術力じゃない。自分の無能をコンテンツに包装する能力だ。」
+      </blockquote>
+
+      <h2>一、人物紹介：プログラマーなのか配信者なのか？</h2>
+      <p>プログラマー魚皮、Bilibili82万フォロワーのUP主。自称「元テンセントのフルスタックエンジニア」で「9年コードを書いてきた」そうだ。現在は codefather.cn（コードの父）というプログラミングナビサイト、「面試鴨（面接ダック）」という問題演習サイト、そして有料のナレッジコミュニティを運営している。</p>
+      <p>彼のBilibili紹介文に注目：「元テンセント開発」——なぜ「元」なのか？テンセントにクビにされたからだ。なぜクビにされたかは、本記事を読めばわかる。</p>
+      <p>Twitterのプロフィールはもっと傑作だ：「プロジェクト狂、10+リリース済みプロダクト」——ネットスラング翻訳：10→十→💩、つまり「💩+リリース済みプロダクト」と読むべき。わかる人にはわかる。</p>
+
+      <h2>二、小紅書「バックドア」事件：9年のコーディングは何だったのか</h2>
+      <h3>事件の経緯</h3>
+      <p>2025年6月18日、あるユーザーが小紅書（RED）のAndroidアプリに隠しデバッグ入口を発見した。設定画面でタイトルを6回連続タップし、「xhsdev」と入力すると開発者モードに入れる。Androidスマホでビルド番号を連打して開発者オプションに入るのと同じ原理——業界では一般的なデバッグツールだ。</p>
+      <p>しかし魚皮はこれを見て大興奮。まず慎重に小紅書が修正するのを待ち（スポンサー様を怒らせるわけにはいかない）、その後すぐに動画を投稿：「速報、小紅書の開発者バックドアが解読された！機密が深刻に漏洩！」</p>
+      <p>セキュリティ業界全体が笑った。</p>
+
+      <h3>顔面崩壊</h3>
+      <p>Bilibiliのセキュリティ系UP主「辺亮」（Apple・Microsoftの0day謝辞を実際に受けたセキュリティ研究者）がすぐに動画を投稿：「開発者モードがバックドア？プライバシー漏洩？専門家が論破！」——17万再生、8600いいね。</p>
+      <p>別のUP主はストレートに言った：「魚皮は完全に間違っている。これはごく普通の開発者デバッグ機能だ。」</p>
+      <p>開発者モードとバックドアの違いは、「従業員通路」と「盗掘穴」の違いだ——デパートに従業員通路があるのを見て「バックドアを発見した！」と叫ぶようなものだ。</p>
+
+      <h3>お決まりの後始末</h3>
+      <p>論破された後の魚皮の対応はテンプレ通り：こっそり動画を削除 + 当たり障りのない釈明で「ネットワークセキュリティの知識が不足していた」。</p>
+      <p>9年コードを書いて、不足しているのはセキュリティ知識じゃなくて常識だろう？Android開発者モードを使ったことがない？それとも9年間ずっとナレッジコミュニティの教材作りに費やしていたのか？</p>
+      <p>UP主Wibusの評価はもっと辛辣だった：9年の経験を持つ開発者として、基本的なセキュリティ常識は必須の素養だ。開発者モードを「バックドア」と呼ぶのは、PVのために意図的に誇張しているか、本当に何も知らないかのどちらかだ。どちらにしても恥ずかしい。</p>
+
+      <h2>三、「too_long_too_long_too_long...」：ハッカーがニックネームで教育</h2>
+      <p>魚皮のBilibiliには「プログラマーの恥」というシリーズがあり、現在第22回まで更新されている。Bilibili史上最も長寿な自虐シリーズだ。中でも最も伝説的なのは2022年のニックネームインジェクション事件。</p>
+
+      <h3>天才的な攻撃</h3>
+      <p>ある天才ユーザーが自分のニックネームをこう変えた：</p>
+      <p><code>too_long_too_long_too_long_too_long_too_long_too_long...</code></p>
+      <p>翻訳：「長すぎ長すぎ長すぎ長すぎ長すぎ...」——無限ループ、ニックネーム1つで3.1MB。</p>
+      <p>ハッカーはニックネームで問題点を教えてくれていたのだ！</p>
+      <p>「おい、長すぎるぞ。文字数制限をつけろよ。」しかし魚皮のバックエンドには基本的な入力バリデーションすらなかった。</p>
+      <p>さらに凄いのは、この天才が自分のコメントに自分で返信したこと。APIレスポンスでニックネームが2回読み込まれ、1レスポンスが6.2MBに膨れ上がり、サイトは即死した。</p>
+      <p>弾幕が狂った：「天才かよ」「tskk配信を爆破した核兵器」「強制的に成長」。画面が核爆発に切り替わり、字幕には「爆発した」——サイトも視聴者も一緒に爆発した。</p>
+
+      <h3>修正チェックリスト（全部未実施）</h3>
+      <ul>
+        <li>ニックネーム文字数制限 ✗</li>
+        <li>APIレスポンスサイズ制限 ✗</li>
+        <li>ページネーション ✗</li>
+        <li>ユーザー入力バリデーション ✗</li>
+      </ul>
+      <p>上記のどれか1つでもこの攻撃を防げた。しかし1つも実装されていなかった。これが「テンセントのフルスタック」——フルスタックの意味は：全技術スタックに脆弱性がある。</p>
+
+      <h2>四、年1回ボコられるシリーズ：「毎年殴られないといけないのか？」</h2>
+
+      <h3>2023年：1.5万元の被害者アピール名場面</h3>
+      <p>サイトがまた攻撃され、魚皮は動画で泣き言：「まさかまた攻撃されるとは！1.5万元の損害、もう勘弁してくれ！」字幕には「毎年ボコられないといけないのか」。弾幕の統一回答：はい。</p>
+
+      <h3>2025年12月：サーバーがマイニング農場に</h3>
+      <p>Next.jsの既知の脆弱性を放置 + Dockerコンテナ隔離なし + 宝塔パネル丸出し = ハッカーの楽園。</p>
+      <p>ターミナルのスクリーンショットのファイル一覧は行為芸術だ：</p>
+      <ul>
+        <li><code>xmrig-6.24.0</code> ← Moneroマイナー、あなたのCPUで他人を儲けさせる</li>
+        <li><code>kal.tar.gz</code> ← ハッキングツールキット、あなたの家に預けられている</li>
+        <li><code>sex.sh</code> ← これは...まあ、あなたが書いたものではない</li>
+      </ul>
+      <p>ハッカーは彼のサーバーをセルフストレージとして使い、出入り自由、まるで我が家。弾幕コメント：「毎日侵入される」「これがゴールド・エクスペリエンス」。</p>
+      <p>他人にプログラミングを教える人間が、自分のサーバーにDockerすら入れていない。教習所の教官がシートベルトをしないようなものだ。</p>
+
+      <h3>2026年2月：AI請求書1.8万元</h3>
+      <p>クレジットカードにAIサービス料 $2,466が表示され、ツイートで「AIにこんなにお金がかかるとは」と嘆く。「10+💩リリース済みプロダクト」が基本的に全部Cursorで生成されていることを考えると、この1.8万元は彼の「開発チーム」全体の月給だ。</p>
+      <p>月1.8万元でAIにコードを書かせて、出来上がったサイトには入力バリデーションすらない——このROI、AIですら不憫に思うだろう。</p>
+
+      <h2>五、GitHubコメント統制事件：負けたら削除</h2>
+
+      <h3>rubbish-yingxiaohao 事件</h3>
+      <p>魚皮はGitHubに rubbish-yingxiaohao（ゴミマーケティングアカウント識別器）というプロジェクトを持っていた——皮肉なことに、彼自身が最大のマーケティングアカウントだ。</p>
+      <p>ある開発者がV2EXで暴露：誰かがこのプロジェクトにPR（プルリクエスト）を出したところ、魚皮の対応は：</p>
+      <ol>
+        <li>PRのタイトルと内容を改ざん（小学生レベルの内容に変更）</li>
+        <li>PRをロック（他人が修正・削除できないように）</li>
+        <li>最後にリポジトリごと削除、コミュニティの貢献もろとも消滅</li>
+      </ol>
+      <p>V2EXユーザーの評価：「あのバカPRの記録が残るのが怖かったんだろう。」</p>
+
+      <h3>知乎での異論封殺</h3>
+      <p>さらに面白いのは、知乎で「プログラマー魚皮をどう評価するか」と質問すると、「他人のプライバシー侵害」を理由に即座にBANされること。脈脈（Maimai）で魚皮を批判する投稿もきれいに消されている。</p>
+      <p>V2EXユーザーが核心を突いた：「テンセントが出資しているプラットフォームでこの人を検索すると、出てくるのは全部ポジティブな評価だけ。」</p>
+      <p>「ゴミマーケティングアカウント識別器」を作った人間が、自分自身が最も識別されるべきマーケティングアカウント。「オープンソース精神」を掲げる人間が、PRで馬鹿にされたらリポジトリごと削除して逃亡。これが魚皮版の「オープンソース」——お前のソースは開く、俺の口は閉じる。</p>
+
+      <h2>六、ナレッジコミュニティ：有料カモ刈りの芸術</h2>
+
+      <h3>コンテンツの質</h3>
+      <p>V2EX、牛客網での魚皮ナレッジコミュニティの評価は驚くほど一致している：</p>
+      <blockquote>
+        「実質的な内容も技術的価値もない。要するに初心者を騙すピエロ。」<br/>
+        「グループの内容はネットで拾ったリソースと出席チェックだけ。」<br/>
+        「CS分野の最高のコンテンツの99%は無料だ。なぜ金を払ってナレッジコミュニティに入る？」<br/>
+        「学生時代はこういうプログラミング公式アカウントを崇拝していたが、2年働いた後に振り返ると、全部新人を騙してカモにする鎌だった。」
+      </blockquote>
+      <p>無料リソースで独学してByteDance、Microsoft、Amazonのオファーを獲得した人がいる一方、魚皮のコミュニティに課金した人が得たのは、ネットで無料で見つかるリソースと「出席チェック」の儀式感だけ。</p>
+
+      <h3>本質分析</h3>
+      <p>知乎の誰かが的確にまとめた：「魚皮が稼いでいるのは配信者だからであって、技術が凄いからじゃない。就活の参考にするな、金の稼ぎ方の参考にしろ。」</p>
+      <p>要するに、魚皮のビジネスモデルは：</p>
+      <p>「元テンセント」の肩書きで初心者を釣る → 無料動画で信頼を構築 → 有料ナレッジコミュニティに誘導 → CRUDプロジェクトを「実践チュートリアル」として包装 → 収穫完了、次のバッチへ</p>
+
+      <h2>七、バレンタイン特集：AI彼女名場面</h2>
+      <p>2026年バレンタインデー、魚皮がツイート：「みなさんに僕の彼女を紹介します——魚小妹」。</p>
+      <p>開いてみると：GLM-5で作ったAI彼女、クラウドサーバーにデプロイしてQQに接続、「スマホを取り出せばすぐチャット、感情的価値マックス」。</p>
+      <p>チャットのスクリーンショットでは、AI生成の「彼女の自撮り」の左下にはっきりと「AI生成」と書いてある。</p>
+      <p>操作フロー：数万元でAIを購入 → AIに自分のコードを書かせる → AIが書いたコードでAI彼女を作る → AI彼女とチャット → スクショをツイート → 「後でチュートリアル出します」と予告。</p>
+      <p>すごいな、バーチャル彼女の作り方まで講座にして売れるのか。万物が集客ネタ、魚皮は嘘をつかない。</p>
+
+      <h2>八、炎上からマネタイズへの永久機関</h2>
+      <p>魚皮がただの技術弱者だと思ったら大間違いだ。彼の本当にカンストしたスキルツリーはSNSマーケティングだ。</p>
+      <p>彼のコンテンツパターンを観察すると、精密な商業永久機関が見えてくる：</p>
+      <p>事故発生 → 被害者アピール動画 → 議論を呼んでPV獲得 → 動画の下に¥109の面接問題集広告 → 次の事故を待つ（平均3〜6ヶ月）</p>
+      <ul>
+        <li>サイトが攻撃された？動画の下に講座リンク。</li>
+        <li>マイニングされた？「クラウドセキュリティ講座」を1本出す。</li>
+        <li>小紅書の開発者モード？修正を待ってから動画で便乗。</li>
+        <li>AI彼女を作った？「完全ガイド来ました！」</li>
+      </ul>
+      <p>「プログラマーの恥」シリーズ22回、毎回が完璧な集客素材。他人の恥は黒歴史、魚皮の恥はコンテンツ資産。</p>
+
+      <h2>九、「コードの父」の実力</h2>
+      <p>codefather.cn——コードの父。自分の書いたコードに入力バリデーションすらない人間が、「コードの父」を自称している。</p>
+      <p>じゃあコードは彼を何と呼ぶ？パパ？</p>
+      <p>このサイトは現在主にCursor（AIコーディングツール）でメンテナンスされている。つまり、codefather.cnの本当の開発者はClaudeとGPTで、魚皮はせいぜい運用担当——しかもサーバーをマイニング農場にしてしまうタイプの運用担当だ。</p>
+      <p>2025年12月にやっとTwitterに登録、目標2万フォロワー、プロフィールには「起業中」。翻訳：国内のカモを刈り尽くしたので、海外のカモを刈りに行く準備中。</p>
+
+      <h2>十、結語</h2>
+      <p>プログラマー魚皮の「プログラマーの恥」シリーズは既に22回。彼の炎上頻度から見て、このシリーズは『名探偵コナン』より長くなる可能性が高い。</p>
+      <p>宝塔パネルでNode.jsを丸出しで動かし続け、入力バリデーションをせず、開発者モードをバックドアと呼び続け、ハッカーにtoo_longニックネームで教育され続ける限り——このシリーズはネタに困ることがない。</p>
+      <p>そしてニックネームを「too_long_too_long_too_long...」に変えたあの無名の英雄は、おそらくこの一件で最もユーモアのセンスがある人物だ。彼は魚皮のサイトを爆破しただけでなく、ニックネームで完璧なCode Reviewを残した：</p>
+      <p><strong>「長すぎるぞ、おい。文字数制限をつけろ。」</strong></p>
+      <p>残念ながら、9年コードを書いてきた「コードの父」には、読めなかった。</p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">本記事は公開情報に基づいて作成。事実と異なる点があれば、魚皮本人の訂正を歓迎する——まず「バックドア」と「開発者モード」の違いを理解してから来ることをお勧めする。あと、サーバーにDockerを入れるのを忘れずに。🤣🤣🤣</p>
+      </div>
+
+
+      <div class="lang-block" data-lang="en">
+      <h1>The Codefather: Programmer Yupi's Greatest Hits of Shame</h1>
+      <div class="sub">— How a "9-year coder" turned himself into a cautionary tale</div>
+      <div class="meta">2026-02-25</div>
+      <hr />
+
+      <blockquote>
+        "He doesn't make money from his skills. He makes money by packaging his incompetence as content."
+      </blockquote>
+
+      <h2>I. Who Is This Guy: Programmer or Streamer?</h2>
+      <p>Programmer Yupi, a Bilibili creator with 820K followers, self-proclaimed "ex-Tencent full-stack engineer" who has "written code for 9 years." He currently runs codefather.cn (a programming navigation site), "Interview Duck" (a practice problem site), and a paid knowledge community.</p>
+      <p>Note his Bilibili bio: "Ex-Tencent developer" — why "ex"? Because Tencent didn't want him anymore. Why they didn't want him will become obvious by the end of this article.</p>
+      <p>His Twitter bio is even better: "Project maniac, 10+ shipped products" — internet slang decode: 10 → 💩, so read it as "💩+ shipped products." If you know, you know.</p>
+
+      <h2>II. The Xiaohongshu "Backdoor" Incident: 9 Years of Coding for Nothing</h2>
+      <h3>What Happened</h3>
+      <p>On June 18, 2025, someone discovered a hidden debug entry in Xiaohongshu's Android app: tap the title 6 times on the settings page, type "xhsdev," and you're in developer mode. Same principle as tapping the build number on any Android phone to unlock developer options — a standard industry debug tool.</p>
+      <p>Yupi saw this and lost his mind. He carefully waited until Xiaohongshu patched it (can't upset the sponsors), then rushed out a video: "BREAKING: Xiaohongshu developer backdoor cracked! Serious data leak!"</p>
+      <p>The entire security community laughed.</p>
+
+      <h3>The Smackdown</h3>
+      <p>Bilibili security creator "Bian Liang" (an actual security researcher with Apple and Microsoft 0-day acknowledgments) responded: "Developer mode is a backdoor? Privacy leak? Expert debunks!" — 170K views, 8,600 likes.</p>
+      <p>Another creator put it bluntly: "Yupi is flat-out wrong. This is perfectly normal developer debugging."</p>
+      <p>The difference between developer mode and a backdoor is like the difference between a staff entrance and a break-in tunnel — you don't run into a mall's staff door screaming "I found a backdoor!"</p>
+
+      <h3>Classic Damage Control</h3>
+      <p>After getting destroyed, Yupi's response was textbook: quietly delete the video + post a lukewarm statement saying "I lack cybersecurity knowledge."</p>
+      <p>Nine years of coding and what you lack isn't security knowledge — it's common sense. You've never used Android developer mode? Or did you spend all 9 years writing tutorials for your paid community?</p>
+      <p>Creator Wibus was sharper: As a developer with 9 years of experience, basic security awareness is a fundamental skill. Calling developer mode a "backdoor" is either intentional clickbait or genuine ignorance. Either way, it's embarrassing.</p>
+
+      <h2>III. "too_long_too_long_too_long...": A Hacker Schools You Via Nickname</h2>
+      <p>Yupi has a Bilibili playlist called "Programmer's Shame," now on episode 22 — the longest-running self-own series on the platform. The most legendary episode is the 2022 nickname injection incident.</p>
+
+      <h3>A Genius-Level Attack</h3>
+      <p>Some genius changed their nickname to:</p>
+      <p><code>too_long_too_long_too_long_too_long_too_long_too_long...</code></p>
+      <p>Translation: "too long too long too long too long too long..." — infinite loop, one nickname at 3.1MB.</p>
+      <p>The hacker was literally telling you the problem in the nickname!</p>
+      <p>"Dude, it's too long. Add a length limit." But Yupi's backend didn't even have basic input validation.</p>
+      <p>Even better: this genius replied to their own comment. The API loaded the nickname twice per response, ballooning a single response to 6.2MB. The site died on the spot.</p>
+      <p>The comment section exploded: "absolute legend," "the nuke that blew up tskk's stream," "forced evolution." Cut to a nuclear explosion, subtitle reads "it blew up" — the site and the audience blew up together.</p>
+
+      <h3>Fix Checklist (None Implemented)</h3>
+      <ul>
+        <li>Nickname length limit ✗</li>
+        <li>API response size limit ✗</li>
+        <li>Pagination ✗</li>
+        <li>User input validation ✗</li>
+      </ul>
+      <p>Any single one of these would have prevented the attack. None were implemented. This is "Tencent full-stack" — full-stack meaning: vulnerabilities across the full stack.</p>
+
+      <h2>IV. The Annual Beatdown: "Do I Have to Get Wrecked Every Year?"</h2>
+
+      <h3>2023: The ¥15K Victim Performance</h3>
+      <p>Site got attacked again. Yupi filmed a sob video: "I can't believe I got attacked again! Lost ¥15K, I'm done!" Subtitle: "Do I have to get wrecked every year?" Comment section's unanimous answer: Yes.</p>
+
+      <h3>December 2025: Server Becomes a Mining Farm</h3>
+      <p>Unpatched Next.js vulnerability + no Docker isolation + bare BaoTa panel = hacker playground.</p>
+      <p>The terminal screenshot's file listing was performance art:</p>
+      <ul>
+        <li><code>xmrig-6.24.0</code> ← Monero miner, using your CPU to make someone else money</li>
+        <li><code>kal.tar.gz</code> ← Hacking toolkit, stored at your place</li>
+        <li><code>sex.sh</code> ← This one... wasn't written by you, at least</li>
+      </ul>
+      <p>Hackers treated his server like a self-storage unit — come and go as they please, make themselves at home. Comments: "daily intrusion," "this is the golden experience."</p>
+      <p>A guy who teaches others to code can't even install Docker on his own server. That's like a driving instructor who doesn't wear a seatbelt.</p>
+
+      <h3>February 2026: $2,466 AI Bill</h3>
+      <p>Credit card shows $2,466 in AI service fees. He tweets: "Didn't expect to spend this much on AI." Given that his "10+ 💩 shipped products" are basically all Cursor-generated, that $2,466 is his entire "dev team's" monthly salary.</p>
+      <p>Spending $2,466/month on AI-written code that doesn't even have input validation — even the AI must feel ripped off.</p>
+
+      <h2>V. GitHub Comment Control: Can't Take the Heat, Delete the Repo</h2>
+
+      <h3>The rubbish-yingxiaohao Incident</h3>
+      <p>Yupi had a GitHub project called rubbish-yingxiaohao (spam marketing account detector) — the irony being that he himself is the biggest marketing account.</p>
+      <p>A developer exposed on V2EX: someone submitted a PR to this project. Yupi's response:</p>
+      <ol>
+        <li>Edited the PR title and content (changed it to grade-school-level nonsense)</li>
+        <li>Locked the PR (preventing anyone from modifying or deleting it)</li>
+        <li>Deleted the entire repository, wiping all community contributions</li>
+      </ol>
+      <p>V2EX users' take: "Probably scared that the idiot PR had a paper trail."</p>
+
+      <h3>Zhihu Censorship</h3>
+      <p>Even better: if you ask "What do you think of Programmer Yupi?" on Zhihu, the question gets banned for "violating someone's privacy." Critical posts about Yupi on Maimai get scrubbed clean too.</p>
+      <p>A V2EX user nailed it: "Search for this guy on any platform Tencent has invested in, and all you'll find are positive reviews."</p>
+      <p>The guy who built a "spam marketing account detector" is himself the account most in need of detection. The guy who preaches "open source spirit" deletes his repo and runs when a PR mocks him. This is Yupi's version of "open source" — open your source, shut my mouth.</p>
+
+      <h2>VI. Knowledge Community: The Art of Paid Grifting</h2>
+
+      <h3>Content Quality</h3>
+      <p>Reviews of Yupi's knowledge community on V2EX and Nowcoder are remarkably consistent:</p>
+      <blockquote>
+        "No substance, no technical value. Basically a clown scamming beginners."<br/>
+        "The group content is just resources scraped from the internet and daily check-ins."<br/>
+        "99% of the best CS content is free. Why pay for a knowledge community?"<br/>
+        "In college I worshipped these programming influencers. Two years into my career, I realized they're all scythes harvesting newbies."
+      </blockquote>
+      <p>People have self-studied with free resources and landed offers at ByteDance, Microsoft, and Amazon. Meanwhile, those who paid for Yupi's community got a pile of freely available resources and the ritual of "daily check-ins."</p>
+
+      <h3>The Real Game</h3>
+      <p>Someone on Zhihu summed it up perfectly: "Yupi makes money because he's a streamer, not because he's technically good. Don't learn from him how to get a job — learn from him how to make money."</p>
+      <p>In plain terms, Yupi's business model:</p>
+      <p>"Ex-Tencent" credibility to attract beginners → free videos to build trust → funnel into paid community → wrap CRUD projects as "hands-on tutorials" → harvest complete, next batch</p>
+
+      <h2>VII. Valentine's Special: The AI Girlfriend Moment</h2>
+      <p>Valentine's Day 2026, Yupi tweets: "Let me introduce my girlfriend — Yu Xiaomei."</p>
+      <p>Click through: an AI girlfriend built with GLM-5, deployed on a cloud server connected to QQ. "Pull out your phone and chat anytime, emotional value maxed out."</p>
+      <p>In the chat screenshots, the AI-generated "girlfriend selfie" clearly reads "AI Generated" in the bottom-left corner.</p>
+      <p>The pipeline: spend tens of thousands on AI → have AI write your code → use AI-written code to build an AI girlfriend → chat with AI girlfriend → screenshot and tweet → tease "tutorial coming soon."</p>
+      <p>Incredible. Even "how to build yourself a virtual girlfriend" becomes a monetizable course. Everything is a funnel. Yupi never lies about that.</p>
+
+      <h2>VIII. The Perpetual Motion Machine: From Disaster to Monetization</h2>
+      <p>If you think Yupi is just a bad programmer, you're dead wrong. His truly maxed-out skill tree is social media marketing.</p>
+      <p>Watch his content pattern and you'll see a precision-engineered perpetual motion machine:</p>
+      <p>Incident → film a sob video → spark discussion for traffic → slap a ¥109 interview prep ad under the video → wait for the next incident (average 3-6 months)</p>
+      <ul>
+        <li>Site got DDoS'd? Course link under the video.</li>
+        <li>Got cryptojacked? Drop a "cloud security tutorial."</li>
+        <li>Xiaohongshu developer mode? Wait for the fix, then ride the hype.</li>
+        <li>Built an AI girlfriend? "Step-by-step guide incoming!"</li>
+      </ul>
+      <p>"Programmer's Shame" series, 22 episodes — each one a perfect piece of funnel content. Other people's shame is a skeleton in the closet. Yupi's shame is a content asset.</p>
+
+      <h2>IX. The "Codefather" Brand</h2>
+      <p>codefather.cn — The Codefather. A guy whose own code doesn't even have input validation calls himself "The Codefather."</p>
+      <p>So what does the code call him? Daddy?</p>
+      <p>The site is now primarily maintained by Cursor (an AI coding tool). Meaning codefather.cn's real developers are Claude and GPT. Yupi is at best an ops guy — the kind of ops guy who turns his server into a mining farm.</p>
+      <p>Registered on Twitter in December 2025, targeting 20K followers, bio says "building." Translation: finished harvesting domestic users, preparing to harvest international ones.</p>
+
+      <h2>X. Conclusion</h2>
+      <p>Programmer Yupi's "Programmer's Shame" series is at 22 episodes. At his rate of disasters, this series will probably outlast Detective Conan.</p>
+      <p>As long as he keeps running bare Node.js on BaoTa panel, skipping input validation, calling developer mode a backdoor, and letting hackers school him with too_long nicknames — this series will never run out of material.</p>
+      <p>And that anonymous hero who changed their nickname to "too_long_too_long_too_long..." is probably the funniest person in this entire saga. They didn't just crash Yupi's site — they left a perfect Code Review in their nickname:</p>
+      <p><strong>"Too long, dude. Add a length limit."</strong></p>
+      <p>Sadly, the "Codefather" with 9 years of coding experience didn't get the message.</p>
+
+      <hr />
+      <p style="font-size:14px;color:var(--muted);font-style:italic;">This article is based on publicly available information. If anything is inaccurate, Yupi is welcome to correct it — but maybe learn the difference between a "backdoor" and "developer mode" first. Also, don't forget to install Docker on your server. 🤣🤣🤣</p>
+      </div>
 
       <hr />
       <h2 style="font-size:20px;margin:0 0 12px;">评论</h2>
@@ -169,5 +602,6 @@
       <p style="margin-top:20px;"><a href="/">← 返回首页</a></p>
     </article>
   </main>
+  <script src="/lang.js"></script>
 </body>
 </html>
