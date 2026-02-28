@@ -260,9 +260,9 @@
 
         <!-- 精神科诊断卡 -->
         <div style="position:relative;z-index:5;display:inline-block;text-align:left;margin-bottom:40px;">
-          <div style="border:2px solid #c0392b;border-radius:4px;font-family:'Courier New','SimSun',monospace;background:#fffef5;max-width:480px;box-shadow:2px 2px 6px rgba(0,0,0,.1);position:relative;overflow:hidden;">
+          <div class="diag-card" style="border:2px solid #c0392b;border-radius:4px;font-family:'Courier New','SimSun',monospace;background:#fffef5;max-width:480px;box-shadow:2px 2px 6px rgba(0,0,0,.1);position:relative;overflow:hidden;">
             <div style="background:#c0392b;color:#fff;padding:8px 16px;font-size:14px;font-weight:700;letter-spacing:2px;text-align:center;text-transform:uppercase;">精神科诊断证明书</div>
-            <div style="position:absolute;top:44px;right:20px;width:64px;height:64px;border:3px solid #c0392b;border-radius:50%;color:#c0392b;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;transform:rotate(-15deg);opacity:.3;pointer-events:none;letter-spacing:2px;">确诊</div>
+            <div class="diag-stamp" style="position:absolute;top:44px;right:20px;width:64px;height:64px;border:3px solid #c0392b;border-radius:50%;color:#c0392b;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;transform:rotate(-15deg);opacity:.3;pointer-events:none;letter-spacing:2px;">确诊</div>
             <div style="padding:16px;">
               <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">患者姓名</span><span style="font-weight:600;">爱数码的小学生</span></div>
               <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">病历编号</span><span style="font-weight:600;">SMXXS-20260225</span></div>
@@ -270,12 +270,26 @@
               <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">就诊日期</span><span style="font-weight:600;">2026-02-25</span></div>
               <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">诊断机构</span><span style="font-weight:600;">互联网精神卫生中心</span></div>
               <hr style="border:none;border-top:1px dashed var(--line);margin:10px 0;" />
-              <div style="font-size:15px;font-weight:700;color:#c0392b;text-align:center;padding:8px;border:1px dashed #c0392b;margin-top:8px;">重度臆想症（社交寄生型）</div>
-              <p style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6;">患者长期臆想自己与他人存在深厚友谊，实际上所有人都想拉黑他。伴有严重的记忆力衰退（金鱼级）、食言成瘾、阴阳怪气人格障碍及多账号逃避封禁倾向。患者坚信"换个号就没人认出我了"，属典型的自欺欺人型臆想。建议立即断网，进行为期 12 个月的封闭治疗，期间禁止接触任何即时通讯工具。</p>
+              <div class="diag-result" style="font-size:15px;font-weight:700;color:#c0392b;text-align:center;padding:8px;border:1px dashed #c0392b;margin-top:8px;">复合型精神障碍（终末期）</div>
+              <p style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6;"><strong>主诊断：</strong>重度臆想症（社交寄生型）——患者长期臆想自己与他人存在深厚友谊，实际上所有人都想拉黑他。坚信"换个号就没人认出我了"，属典型自欺欺人型臆想。</p>
+              <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6;"><strong>并发症一：</strong>选择性记忆丧失综合征——记忆力经鉴定约等于金鱼（7秒刷新），同一问题可在24小时内原封不动重复提问，且对"已经回答过你了"这句话完全免疫。</p>
+              <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6;"><strong>并发症二：</strong>阴阳怪气型人格障碍（YYQQ-PD）——无法进行正常人类沟通，所有语句自动附加被动攻击属性。帮他是理所当然，不帮他就阴阳伺候。</p>
+              <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6;"><strong>并发症三：</strong>承诺降解症——患者体内缺乏"守信"酶，任何承诺的半衰期不超过30分钟。食言频率已达到工业级水平。</p>
+              <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6;"><strong>并发症四：</strong>多账号逃逸型反社会倾向——被封禁后不产生任何反思，而是条件反射式注册新号继续骚扰。三个QQ号仅为已知数量，实际可能更多。</p>
+              <p style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6;"><strong>治疗方案：</strong>建议立即强制断网，没收一切电子设备，进行为期24个月的封闭式互联网戒断治疗。治疗期间严禁接触QQ、微信、B站及任何即时通讯工具。预后评估：不乐观。</p>
+              <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6;"><strong>医嘱：</strong>此患者已对"拉黑"产生完全耐药性，常规社交隔离手段无效。建议周围人群采取物理隔离措施。</p>
             </div>
-            <div style="font-size:11px;color:var(--muted);text-align:right;padding:6px 16px 10px;border-top:1px solid var(--line);">互联网精神卫生中心 · 2026</div>
+            <div style="font-size:11px;color:var(--muted);text-align:right;padding:6px 16px 10px;border-top:1px solid var(--line);">互联网精神卫生中心 · 2026 · 本诊断具有法律效力（并没有）</div>
           </div>
         </div>
+        <style>
+          @media (prefers-color-scheme: dark) {
+            .diag-card { background: #2a2420 !important; border-color: #8b3a3a !important; box-shadow: 2px 2px 6px rgba(0,0,0,.3) !important; }
+            .diag-card > div:first-child { background: #8b3a3a !important; }
+            .diag-stamp { color: #c07878 !important; border-color: #c07878 !important; }
+            .diag-result { color: #e07878 !important; border-color: #e07878 !important; }
+          }
+        </style>
 
         <br />
 
