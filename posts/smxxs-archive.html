@@ -258,14 +258,50 @@
         <!-- 固定弹幕（不动的） -->
         <div id="danmu-fixed" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9;overflow:hidden;"></div>
 
-        <div style="position:relative;z-index:5;display:inline-block;border:2px solid var(--line);border-radius:16px;padding:40px 50px;background:var(--paper);box-shadow:0 4px 20px var(--shadow);">
-          <p style="font-size:40px;margin:0 0 10px;">🪦</p>
-          <p style="font-size:22px;font-weight:600;margin:0 0 6px;">爱数码的小学生</p>
-          <p style="font-size:14px;color:var(--muted);margin:0 0 4px;">B站 UID: 3546799518255482</p>
-          <p style="font-size:14px;color:var(--muted);margin:0 0 20px;">QQ: 27335141 / 3653248805 / 1137743390</p>
-          <p style="font-size:13px;color:var(--muted);font-style:italic;margin:0 0 6px;">"他来过，他骚扰过，他被挂了。"</p>
-          <p style="font-size:13px;color:var(--muted);font-style:italic;margin:0 0 24px;">其父母亦已先行一步，在此一并悼念。</p>
-          <div style="border-top:1px solid var(--line);padding-top:20px;">
+        <!-- 精神科诊断卡 -->
+        <div style="position:relative;z-index:5;display:inline-block;text-align:left;margin-bottom:40px;">
+          <div style="border:2px solid #c0392b;border-radius:4px;font-family:'Courier New','SimSun',monospace;background:#fffef5;max-width:480px;box-shadow:2px 2px 6px rgba(0,0,0,.1);position:relative;overflow:hidden;">
+            <div style="background:#c0392b;color:#fff;padding:8px 16px;font-size:14px;font-weight:700;letter-spacing:2px;text-align:center;text-transform:uppercase;">精神科诊断证明书</div>
+            <div style="position:absolute;top:44px;right:20px;width:64px;height:64px;border:3px solid #c0392b;border-radius:50%;color:#c0392b;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;transform:rotate(-15deg);opacity:.3;pointer-events:none;letter-spacing:2px;">确诊</div>
+            <div style="padding:16px;">
+              <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">患者姓名</span><span style="font-weight:600;">爱数码的小学生</span></div>
+              <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">病历编号</span><span style="font-weight:600;">SMXXS-20260225</span></div>
+              <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">主治医师</span><span style="font-weight:600;">Dr. Lin Bo</span></div>
+              <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">就诊日期</span><span style="font-weight:600;">2026-02-25</span></div>
+              <div style="display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.6;"><span style="color:var(--muted);white-space:nowrap;min-width:70px;">诊断机构</span><span style="font-weight:600;">互联网精神卫生中心</span></div>
+              <hr style="border:none;border-top:1px dashed var(--line);margin:10px 0;" />
+              <div style="font-size:15px;font-weight:700;color:#c0392b;text-align:center;padding:8px;border:1px dashed #c0392b;margin-top:8px;">重度社交障碍综合征（骚扰型）</div>
+              <p style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6;">患者表现为持续性、强迫性社交骚扰行为，伴有严重的记忆力衰退（金鱼级）、食言成瘾、阴阳怪气人格障碍及多账号逃避封禁倾向。建议立即断网，进行为期 12 个月的封闭治疗，期间禁止接触任何即时通讯工具。</p>
+            </div>
+            <div style="font-size:11px;color:var(--muted);text-align:right;padding:6px 16px 10px;border-top:1px solid var(--line);">互联网精神卫生中心 · 2026</div>
+          </div>
+        </div>
+
+        <br />
+
+        <!-- Paper 风格墓碑 -->
+        <div id="smxxs_tomb" style="position:relative;z-index:5;display:inline-flex;flex-direction:column;align-items:center;user-select:none;">
+          <div style="position:relative;background:linear-gradient(180deg,#9e9e9e 0%,#757575 40%,#616161 100%);border-radius:50% 50% 4px 4px / 30% 30% 4px 4px;padding:32px 28px 24px;text-align:center;color:#e0e0e0;min-width:200px;box-shadow:0 4px 12px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.15);border:1px solid #555;">
+            <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:60%;height:2px;background:rgba(255,255,255,.1);border-radius:1px;"></div>
+            <div style="font-size:22px;margin-bottom:6px;opacity:.7;">✝</div>
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:700;letter-spacing:4px;margin-bottom:8px;text-shadow:0 1px 2px rgba(0,0,0,.4);">R.I.P.</div>
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;font-weight:700;margin-bottom:4px;text-shadow:0 1px 2px rgba(0,0,0,.3);">爱数码的小学生</div>
+            <div style="font-size:12px;opacity:.7;margin-bottom:4px;">UID: 3546799518255482</div>
+            <div style="font-size:12px;opacity:.7;margin-bottom:8px;">QQ: 27335141 / 3653248805 / 1137743390</div>
+            <div style="font-size:12px;font-style:italic;opacity:.8;line-height:1.4;max-width:220px;margin:0 auto;">"他来过，他骚扰过，他被挂了。其父母亦已先行一步，在此一并悼念。"</div>
+          </div>
+          <div style="width:110%;height:14px;background:linear-gradient(180deg,#6d6d6d 0%,#4a4a4a 100%);border-radius:0 0 2px 2px;box-shadow:0 2px 4px rgba(0,0,0,.3);"></div>
+          <div style="width:140%;height:20px;background:linear-gradient(180deg,#5d7a3e 0%,#4a6b2e 50%,#3d5a25 100%);border-radius:50%;margin-top:-6px;box-shadow:0 2px 6px rgba(0,0,0,.2);"></div>
+
+          <!-- 上香区域 -->
+          <div style="display:flex;flex-direction:column;align-items:center;margin-top:8px;min-height:80px;">
+            <button id="incense-btn" onclick="smxxsIncense()" style="background:none;border:1px solid var(--muted);color:var(--muted);padding:6px 16px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .3s;font-family:inherit;">🕯 为此人上香</button>
+            <div id="incense-holder" style="display:flex;gap:6px;justify-content:center;margin-top:8px;height:70px;align-items:flex-end;"></div>
+            <p id="incense-count" style="font-size:11px;color:var(--muted);margin-top:4px;"></p>
+          </div>
+
+          <!-- 哀悼按钮 -->
+          <div style="margin-top:12px;">
             <button id="mourn-btn" style="background:none;border:1px solid var(--line);border-radius:10px;padding:10px 24px;cursor:pointer;color:var(--ink);font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:all .2s;" title="为此人哀悼">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 16"/></svg>
               <span>为此人哀悼</span>
@@ -274,6 +310,59 @@
           </div>
         </div>
       </div>
+
+      <!-- 上香脚本 -->
+      <style>
+        @keyframes incense-burn { 0%{height:50px;opacity:1} 80%{height:6px;opacity:.8} 100%{height:0;opacity:0} }
+        @keyframes ember-glow { 0%{box-shadow:0 0 3px #e74c3c,0 0 6px #ff6b35} 100%{box-shadow:0 0 6px #e74c3c,0 0 12px #ff6b35,0 0 18px rgba(255,107,53,.3)} }
+        @keyframes smoke-rise { 0%{transform:translate(-50%,0) scale(1);opacity:.6} 50%{transform:translate(calc(-50% + 8px),-30px) scale(2);opacity:.3} 100%{transform:translate(calc(-50% - 4px),-60px) scale(3);opacity:0} }
+        .smxxs-stick { position:relative;width:2px;height:50px;background:linear-gradient(180deg,#d4a017 0%,#8b6914 100%);border-radius:1px;transform-origin:bottom center; }
+        .smxxs-stick:nth-child(1) { animation:incense-burn 8s linear forwards; animation-delay:0s; }
+        .smxxs-stick:nth-child(2) { animation:incense-burn 8s linear forwards; animation-delay:.3s; }
+        .smxxs-stick:nth-child(3) { animation:incense-burn 8s linear forwards; animation-delay:.6s; }
+        .smxxs-stick::before { content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:#e74c3c;border-radius:50%;box-shadow:0 0 4px #e74c3c,0 0 8px #ff6b35;animation:ember-glow 1s ease-in-out infinite alternate; }
+        .smxxs-smoke { position:absolute;top:-8px;left:50%;width:6px;height:6px;background:rgba(180,180,180,.5);border-radius:50%;animation:smoke-rise 2.5s ease-out infinite; }
+        .smxxs-stick:nth-child(1) .smxxs-smoke { animation-delay:0s; }
+        .smxxs-stick:nth-child(2) .smxxs-smoke { animation-delay:.8s; }
+        .smxxs-stick:nth-child(3) .smxxs-smoke { animation-delay:1.6s; }
+      </style>
+      <script>
+      var COUNTER_API = 'https://api.shitgfw.top/';
+      function smxxsIncense() {
+        var holder = document.getElementById('incense-holder');
+        var countEl = document.getElementById('incense-count');
+        var btn = document.getElementById('incense-btn');
+        holder.innerHTML = '';
+        for (var i = 0; i < 3; i++) {
+          var stick = document.createElement('div');
+          stick.className = 'smxxs-stick';
+          var smoke = document.createElement('div');
+          smoke.className = 'smxxs-smoke';
+          stick.appendChild(smoke);
+          holder.appendChild(stick);
+        }
+        btn.style.opacity = '.4';
+        btn.style.pointerEvents = 'none';
+        btn.textContent = '🙏 香已点燃';
+        fetch(COUNTER_API + '?key=incense_smxxs', { method: 'POST' })
+          .then(function(r){ return r.json(); })
+          .then(function(d){ countEl.textContent = '已有 ' + d.count + ' 人上香'; })
+          .catch(function(){});
+        setTimeout(function(){
+          holder.innerHTML = '';
+          btn.style.opacity = '';
+          btn.style.pointerEvents = '';
+          btn.textContent = '🕯 为此人上香';
+        }, 8500);
+      }
+      // 页面加载时读取上香计数
+      (function(){
+        fetch(COUNTER_API + '?key=incense_smxxs')
+          .then(function(r){ return r.json(); })
+          .then(function(d){ if(d.count > 0) document.getElementById('incense-count').textContent = '已有 ' + d.count + ' 人上香'; })
+          .catch(function(){});
+      })();
+      </script>
 
       <!-- 弹幕脚本 -->
       <style>
@@ -419,13 +508,13 @@
 
       <script>
       (function(){
-        var API = 'https://api.counterapi.dev/v1/linbo-smxxs/mourn';
+        var API = 'https://api.shitgfw.top/';
+        var KEY = 'mourn_smxxs';
         var countEl = document.getElementById('mourn-count');
         var btn = document.getElementById('mourn-btn');
         var mourned = localStorage.getItem('smxxs_mourned');
 
-        // 获取当前计数
-        fetch(API)
+        fetch(API + '?key=' + KEY)
           .then(function(r){ return r.json(); })
           .then(function(d){ countEl.textContent = d.count || 0; })
           .catch(function(){ countEl.textContent = '?'; });
@@ -438,7 +527,7 @@
 
         btn.addEventListener('click', function(){
           if(mourned) return;
-          fetch(API + '/up')
+          fetch(API + '?key=' + KEY, { method: 'POST' })
             .then(function(r){ return r.json(); })
             .then(function(d){
               countEl.textContent = d.count || (parseInt(countEl.textContent)||0)+1;
